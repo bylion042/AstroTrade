@@ -4,7 +4,6 @@ const path = require('path');
 const mongoose = require('mongoose');
 const session = require('express-session');
 // Import the Exnessuser model
-const Exnessuser = require('./models/exnessuser'); 
 
 // Corrected path for paymentRoutes
 const paymentRoutes = require('./routes/paymentRoutes'); 
