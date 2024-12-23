@@ -1,5 +1,5 @@
 const express = require('express');
-const Exnessuser = require('../models/exnessuser'); // Import Exnessuser model
+const Exnessuser = require('../models/Exnessuser'); // Import Exnessuser model
 const router = express.Router();
 
 router.post('/submit-exness-details', (req, res) => {
