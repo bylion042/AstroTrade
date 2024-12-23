@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const session = require('express-session');
+// Import the Exnessuser model
+const Exnessuser = require('./models/exnessuser'); 
 
 // Corrected path for paymentRoutes
 const paymentRoutes = require('./routes/paymentRoutes'); 
@@ -13,8 +15,6 @@ const app = express(); // Initialize app instance
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
 
-// Import the Exnessuser model
-const Exnessuser = require('./models/exnessuser'); 
 
 // Import routes
 const exnessuserRoutes = require('./routes/exnessuserRoutes');
