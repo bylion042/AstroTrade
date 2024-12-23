@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #35373b;
+    --secondary-color: #696fdd;
+    --secondary-color-dark: #a3a8f0;
+    --text-light: #d1d5db;
+    --white: #ffffff;
+    --max-width: 1300px;
+    --background-gradient: linear-gradient(135deg, rgb(186, 190, 253) 0%, rgb(66, 71, 158) 100%);
+    --background2: linear-gradient(180deg, #d6d9fa, rgb(149, 154, 243));
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--primary-color);
+    color: var(--text-light);
+    width: 100%;
+}
+
+.sidebar{
+    display: none;
+}
+
+
+
+.centered-content1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.overlay {
+    text-align: center;
+    width: 100%;
+    height: 15%;
+    background-image: url('/images/download2.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    padding-bottom: 90px;
+    padding-top: 20px;
+    margin: 0 2rem;
+    position: relative;
+}
+.overlay h2{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.overlay p{
+    font-size: 14px;
+}
+
+
+
+
+.payment-details{
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--primary-color-light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 25%;
+    position: absolute;
+    bottom: 4rem;
+    left: 15rem;
+}
+.payment-details h1{
+    color: var(--secondary-color);
+    font-size: 17px;
+}
+.mark{
+    position: absolute;
+    left: 34rem;
+    top: 4rem;
+    z-index: 1;
+    width: 10%;
+}
+
+.purchase p{
+    font-size: 14px;
+}
+.purchase .content{
+    padding: 14px;
+    margin-top: 5px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid var(--secondary-color-dark);
+}
+
+
+
+#passed-content {
+    display: flex;
+    flex-direction: column;
+}
+#passed-content p{
+    margin-top: 5px;
+    margin-bottom: 30px;
+    padding: 12px 30px;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color-dark);
+}
+#passed-content h3{
+    margin-top: 5px;
+    border-radius: 5px;
+    font-weight: lighter;
+    font-size: 16px;
+    padding: 12px 30px;
+    border: 1px solid var(--secondary-color-dark);
+}
+.ri-checkbox-circle-line:before {
+    content: none;
+}
+
+
+
+
+.package {
+    position: relative;
+    display: inline-block;
+  }
+  .package p{
+        font-size: 14px;
+  }
+  .p-content {
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 12px 30px;
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color-dark);
+  }
+  .dropdown {
+    display: none;
+    position: absolute;
+    border: none;
+    border-radius: 4px;
+    bottom: 43px;
+    z-index: 100;
+  }
+  #platforms-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding: 5px 0;
+    background: var(--primary-color-extra-light);
+  }
+  #platforms-list li {
+    padding: 3px 7px;
+    border: none;
+    cursor: pointer;
+    color:  var(--text-light);
+    font-size: 14px;
+  }
+  #platforms-list li:hover {
+    background-color: var(--primary-color-light);
+  }
+  
+
+
+
+  .confirm-button, .am-sure {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-size: 15px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+.confirm-button:hover, .am-sure:hover {
+    background-color: var(--secondary-color-dark);
+}
+.back-link {
+    color: var(--white);
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+.back-link:hover {
+    color: var(--secondary-color);
+}
+
+
+
+/* FOR CONFIRM PAYMENT  */
+#selected-options-container{
+    padding: 20px;
+    padding-bottom: 4rem;
+    border-radius: 20px;
+    background: var(--primary-color-light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 25%;
+    position: absolute;
+    top: 7rem;
+    right: 15rem;
+    background-image: url('/images/coin1.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+}
+
+#selected-options-container {
+    display: flex;
+    flex-direction: column;
+}
+#selected-options-container p{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 12px 30px;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color-dark);
+}
+#selected-options-container h3{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: lighter;
+    font-size: 16px;
+    padding: 12px 30px;
+    border: 1px solid var(--secondary-color-dark);
+}
+.am-sure{
+    position: relative;
+    left: 15.70rem;
+    top: 12rem;
+    width: 197%;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+
+
+
+    .overlay {
+        /* text-align: center; */
+        /* width: 100%; */
+        /* height: 14%; */
+        /* background-image: url('/images/download2.png');
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: center;  */
+        padding-bottom: 0px;
+        padding-top: 0px;
+        padding: 5px 0;
+        margin-top: 4.50rem;
+        position: static;
+        /* border: 1px solid red; */
+    }
+
+    .overlay h2{
+        font-size: 14px;
+    margin-bottom: 0px;
+    }
+    .overlay p{
+        font-size: 12px;
+        font-weight: 550;
+    }
+
+    .passed{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 10px;
+    }
+
+    .payment-details{
+        /* gap: 2rem; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* padding: 20px; */
+        /* border-radius: 20px; */
+        /* background: var(--primary-color-light); */
+        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+        width: 100%;
+        margin-bottom: 1rem;
+        position: static;
+        /* bottom: 2rem; */
+        /* left: 15rem; */
+        /* border: 1px solid red; */
+        /* background-image: url('/images/coin1.png');
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: center;  */
+
+    }
+
+    .mark{
+        position: relative;
+        left: 15rem;
+        top: 2rem;
+        z-index: 1;
+        width: 30%;
+        /* border: 1px solid red; */
+    }
+
+    .package {
+        position: static;
+        display: inline-block;
+        /* border: 1px solid red; */
+
+      }
+
+      #selected-options-container{
+        /* padding: 20px; */
+        /* padding-bottom: 4rem; */
+        width: 100%;
+        position: static;
+        right: 15rem;
+        margin-bottom: 1rem;
+        /* top: 7rem; */
+        /* background-image: url('/images/coin1.png');
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: center;  */
+        /* border: 1px solid red; */
+
+    }
+    
+
+    .am-sure{
+        position: relative;
+        left: 1.30rem;
+        top: -4.70rem;
+        width: 88%;
+        /* border: 1px solid red; */
+    }
+}

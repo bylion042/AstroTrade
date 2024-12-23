@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>invest</title>
+    <link rel="icon" href="/images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/access-pass.css">
+    <link rel="stylesheet" href="/css/smart-invest.css">
+</head>
+
+<body>
+    <!-- BACKGROUND BLUR -->
+    <span class="bg__blur"></span>
+    <span class="bg__blur footer__blur"></span>
+
+    <%- include('partials/sidebar.ejs') %>
+
+    <div class="centered-content1">
+        <div class="overlay">
+            <h2>Secure Access</h2>
+            <p>
+                Complete your payment to unlock exclusive features and benefits. Your transaction is safe and secure,
+                and once completed, you'll gain immediate access to the services you need.
+            </p>
+        </div>
+
+        <div class="passed">
+            <img src="/images/mark.png" class="mark">
+
+            <div class="payment-details">
+                <h1>Selected Options</h1>
+                <div class="purchase">
+                    <p>Selected Package:</p>
+                    <p class="content">Investment</p>
+                </div>
+
+                <!-- PASSED FROM BUY AND TOURNAMENT PAGE -->
+                <div id="passed-content">
+                    Amount to Pay:
+                    <p id="amountToPay">
+                        <%= price %>
+                    </p>
+                </div>
+
+                <!-- Make Payment Button -->
+                <button class="confirm-button" id="confirmButton">Make Payment</button>
+                <a href="/smart-invest" class="back-link"><i class="ri-arrow-left-line"></i> Back Home</a>
+            </div>
+        </div>
+
+        <script>
+            // FLUTTERWAVE PAYMENT INITIATION
+            document.getElementById('confirmButton').addEventListener('click', function () {
+                // Extract the amount to pay from the `#amountToPay` element
+                const amountToPay = document.getElementById('amountToPay').innerText;
+
+                // Ensure the amount is properly formatted (convert it to a number if necessary)
+                const formattedAmount = parseFloat(amountToPay.replace(/[^0-9.-]+/g, "")); // Remove non-numeric characters
+
+                // Check if the amount is valid
+                if (isNaN(formattedAmount) || formattedAmount <= 0) {
+                    alert("Invalid payment amount. Please check the value.");
+                    return;
+                }
+
+                // Trigger the Flutterwave payment
+                FlutterwaveCheckout({
+                    public_key: "FLWPUBK-3d7eb2a62474ec2167c00fdf9d1108f7-X", // Replace with your public key
+                    tx_ref: "INVEST_" + Date.now(), // Unique transaction reference
+                    amount: formattedAmount, // Use the dynamically fetched amount
+                    currency: "USD", // Change to the desired currency
+                    payment_options: "card, mobilemoney, ussd", // Specify the payment options you want to allow
+                    redirect_url: "/payment-success", // Replace with your success page URL
+                    customer: {
+                        email: "Nova_X@gmail.com", // Replace dynamically or get from the backend
+                        phonenumber: "1234567890", // Replace dynamically or get from the backend
+                        name: "Customer Name", // Replace dynamically or get from the backend
+                    },
+                    customizations: {
+                        title: "Investment Package",
+                        description: "Payment for selected investment package",
+                        logo: "/images/logo.png", // Replace with your logo URL
+                    },
+                });
+            });
+        </script>
+
+        <script src="https://kit.fontawesome.com/b3fa93e021.js" crossorigin="anonymous"></script>
+        <script src="/js/dashboard.js"></script>
+        <script src="/js/access-pass.js"></script>
+        <script src="https://checkout.flutterwave.com/v3.js"></script>
+</body>
+
+</html>

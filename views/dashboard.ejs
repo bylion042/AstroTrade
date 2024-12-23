@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="icon" href="/images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/giveaway.css">
+    <link rel="stylesheet" href="/css/original.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <%- include ('partials/sidebar.ejs') %>
+
+
+            <!-- Main content -->
+            <main class="main-content">
+                <%- include ('partials/profiles.ejs') %>
+
+
+                    <!-- SPACE IMAGE -->
+                    <div class="centered-content">
+                        <h2>Welcome "<%= user.username %>"</h2>
+                        <p>Your journey starts here.</p>
+                    </div>
+
+                    <div class="contents">
+                        <%- include('partials/original') %>
+                            <%- include('partials/giveaway') %>
+                    </div>
+
+            </main>
+
+
+            <!-- INCLUDE BOT AND DRAG ROCKET  -->
+            <%- include('partials/bot') %>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <% if (typeof message !=='undefined' ) { %>
+        <script>
+            Toastify({
+                text: "<%= message %>",
+                duration: 3000,
+                backgroundColor: "<%= messageType === 'error' ? 'red' : 'green' %>",
+                close: true
+            }).showToast();
+        </script>
+        <% } %>
+            <!-- <script src="https://kit.fontawesome.com/b3fa93e021.js" crossorigin="anonymous"></script> -->
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="/js/giveaway.js"></script>
+            <script src="/js/original.js"></script>
+            <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

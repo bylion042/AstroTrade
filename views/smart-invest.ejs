@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smart investment</title>
+    <link rel="icon" href="/images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/competition.css">
+    <link rel="stylesheet" href="/css/buy-account.css">
+    <link rel="stylesheet" href="/css/read-more.css">
+    <link rel="stylesheet" href="/css/tournament.css">
+    <link rel="stylesheet" href="/css/smart-invest.css">
+
+</head>
+<body>
+    
+
+    <div class="container">
+        <%- include ('partials/sidebar.ejs') %>
+
+            <!-- Main content -->
+            <main class="main-content">
+                <%- include ('partials/profiles.ejs') %>
+
+                    <!-- SPACE IMAGE -->
+                    <div class="centered-content">
+                        <h2>Let Gurus trade for you</h2>
+                        <p>
+                            Invest and let our expert traders manage your account, guiding you toward success.!
+                        </p>
+                    </div>
+
+                    <div class="instruction">
+                        <!-- <i class="ri-spam-2-line"></i> -->
+                        <p>
+                            Enjoy regular payouts of your share, directly deposited into your account.
+                        </p>
+                    </div>
+
+                    <!-- ABOUT PHASE -->
+                    <div class="phase-section">
+                        <h3>Claim Account</h3>
+                        <div>
+                            <div class="button-group">
+                                <button class="info-btn" data-target="how-it-works">How it Works</button>
+                                <button class="info-btn" data-target="about-phase">About Plan</button>
+                            </div>
+                            <div class="details-container">
+                                <div id="how-it-works" class="details-content">
+                                    <p>
+                                        <li>
+                                            Invest with confidence by choosing your amount, and let our expert traders manage your funds using proven strategies. You’ll earn 50% of your capital from your investment, with regular fridays payouts directly deposited into your account.
+                                        </li>
+                                    </p>
+                                </div>
+                                <div id="about-phase" class="details-content">
+                                    <p>
+                                        <li>
+                                            Our expert traders handle your investments, allowing you to earn passive income - 50% of the Investment. We offer a transparent and fair profit-sharing model with no hidden fees—just a straightforward payout based on your earnings.
+                                        </li>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Choose a Plan</h3>
+            <!-- INCLUDE GET FUNDED  -->
+            <%- include ('partials/invest') %>
+
+
+            </main>
+
+
+            <!-- INCLUDE BOT AND DRAG ROCKET  -->
+            <%- include('partials/bot') %>
+    </div>
+    </div>
+
+
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/competition.js"></script>
+    <!-- <script src="/js/buy-account.js"></script> -->
+    <!-- <script src="/js/tournament.js"></script> -->
+    <script src="/js/invest.js"></script>
+</body>
+</html>

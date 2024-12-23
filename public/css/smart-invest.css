@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #35373b;
+    --secondary-color: #696fdd;
+    --secondary-color-dark: #a3a8f0;
+    --text-light: #d1d5db;
+    --white: #ffffff;
+    --max-width: 1300px;
+    --background-gradient: linear-gradient(135deg,
+            rgb(186, 190, 253) 0%,
+            rgb(66, 71, 158) 100%);
+    --background2: linear-gradient(180deg, #d6d9fa, rgb(149, 154, 243));
+}
+
+
+.centered-content {
+    background-image: url('/images/space8.jpeg');
+}
+.price__card img {
+    position: absolute;
+    bottom: 17rem;
+    left: 12rem;
+    width: 30%;
+}
+.price__grid {
+    margin-bottom: 2rem;
+}
+.payment-details {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--primary-color-light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 25%;
+    position: absolute;
+    bottom: 14rem;
+    left: 15rem;
+}
+
+
+
+.gurus {
+    display: none;
+}
+.eh{
+    display: none;
+}
+
+
+
+
+
+@media (max-width: 800px) {
+    .overlay {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        padding: 5px 0;
+        margin-top: 4.50rem;
+        position: static;
+    }
+    .overlay h2 {
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+    .overlay p {
+        font-size: 12px;
+        font-weight: 550;
+    }
+    .passed {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 10px;
+    }
+    .payment-details {
+        width: 100%;
+        margin-bottom: 1rem;
+        position: static;
+
+    }
+    .mark {
+        position: relative;
+        left: 15rem;
+        top: 2rem;
+        z-index: 1;
+        width: 30%;
+    }
+    .package {
+        position: static;
+        display: inline-block;
+    }
+    #selected-options-container {
+        width: 100%;
+        position: static;
+        right: 15rem;
+        margin-bottom: 1rem;
+    }
+    .am-sure {
+        position: relative;
+        left: 1.30rem;
+        top: -4.70rem;
+        width: 88%;
+    }
+
+
+    
+    .gurus {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+        margin-top: 15px;
+        
+    }
+    .eh{
+        display: block;
+    }
+    .gurus img {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 8%;
+        height: 15%;
+        border-radius: 100px;
+    border: 2px solid var(--secondary-color);
+    }
+    .price__grid {
+        margin-bottom: 2rem;
+    }
+}

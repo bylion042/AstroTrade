@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>competition</title>
+    <link rel="icon" href="/images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/competition.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <%- include ('partials/sidebar.ejs') %>
+
+            <!-- Main content -->
+            <main class="main-content">
+                <%- include ('partials/profiles.ejs') %>
+
+                    <!-- SPACE IMAGE -->
+                    <div class="centered-content">
+                        <h2>Nova X Competition</h2>
+                        <p>Step into the Spotlight and Conquer the Challenge!"</p>
+                    </div>
+
+                    <!-- COMPETITION LISTS  -->
+                    <%- include ('partials/competition-lists.ejs') %>
+
+            </main>
+
+            <!-- INCLUDE BOT AND DRAG ROCKET -->
+            <%- include('partials/bot') %>
+    </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/competition.js"></script>
+</body>
+
+</html>

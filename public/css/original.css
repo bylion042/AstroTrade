@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #35373b;
+    --secondary-color: #696fdd;
+    --secondary-color-dark: #a3a8f0;
+    --text-light: #d1d5db;
+    --white: #ffffff;
+    --max-width: 1300px;
+    --background-gradient: linear-gradient(135deg, 
+            rgb(186, 190, 253) 0%, 
+            rgb(66, 71, 158) 100%);
+    --background2: linear-gradient(180deg, #d6d9fa, rgb(149, 154, 243));
+}
+
+
+.original{
+display: flex;
+flex-direction: column;
+gap: 1rem;
+width: 70%;
+padding: 10px;
+/* border-right: 0.5px solid var(--secondary-color-dark); */
+}
+
+/* FOR CAPITALS  */
+.cards{
+    height: 15%;
+display: flex;
+gap: 1rem;
+width: 100%;                                                                                                                                                                                
+/* flex-wrap: wrap; */
+}
+.cards a{
+    color: var(--primary-color);
+    text-decoration: none;
+    width: 100%;                                                                                                                                                                                
+}
+
+.card {
+    width: 100%;                                                                                                                                                                                
+
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+background: var(--background-gradient);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.dif h3{
+    color: #00695c;
+}
+
+
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+.card h3{
+    font-size: 14px;
+}
+.card p{
+    font-size: 12px;
+}
+
+.card-amount {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+}
+
+
+
+/* CANCAS CHART  */
+.container1 {
+    /* text-align: center; */
+    padding: 5px 0px;
+    /* border-radius: 10px; */
+    /* border-bottom: 1px solid var(--secondary-color); */
+    /* box-shadow: 0 0px 4px var(--secondary-color); */
+}
+#mySmallChart{
+    display: none;
+}
+
+.pium h1 {
+    margin: 10px 0;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.section__container{
+    display: none;
+}
+
+
+
+
+
+@media (max-width: 800px) {
+
+
+
+    .original{
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+        padding: 10px;
+        border-right: none;
+        }
+
+
+    .cards{
+        height: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;                                                                                                                                                                                
+    flex-wrap: wrap;
+}
+
+.cards a{
+        width: 40%;                                                                                                                                                                                
+    }
+
+
+    .card {
+        border-radius: 5px;
+        padding: 5px 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: var(--background-gradient);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    }
+    
+
+    .card .withdraw{
+    position: absolute;
+    top: 5.40rem;
+    left: 5rem;
+    border: none;
+    background-color: #e0f7fa;
+        color: #00695c;
+        padding: 1px 5px;
+        border-radius: 20px;
+        font-size: 0.5em;
+        font-weight: bold;
+        display: none;
+    }
+    .card h3{
+        font-size: 13px;
+    }
+    .card p{
+        font-size: 11px;
+    }
+
+
+    /* CANCAS CHART  */
+    .pium h1{
+      font-size: 13px;
+    }
+
+.container1 {
+    padding: 5px 0px;
+    border-radius: 5px;
+    box-shadow: 0 0px 4px var(--secondary-color);
+}
+
+#myLargeChart{
+    display: none;
+}
+#mySmallChart{
+    display: block;
+}
+
+
+
+
+
+/* SLID  */
+
+/* Slide Container */
+
+.section__container{
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+
+}
+
+.section__container h2{
+    color: var(--text-light);
+    font-size: 14px;
+}
+.section__container p{
+    color: var(--text-light);
+    font-size: 10px;
+    padding: 5px 2px 0;
+    font-weight: bold;
+}
+
+.slide-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 15rem;
+    margin: 0;
+  }
+  
+  .slide {
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slide-animation 15s linear infinite;
+  }
+  
+  .slide img {
+    width: 10%;
+    flex-shrink: 0;
+  }
+  
+  /* Animation */
+  @keyframes slide-animation {
+    0% {
+      transform: translateX(0);
+      /* Start at the original position */
+    }
+  
+    50% {
+      transform: translateX(-50%);
+      /* Slide to the left */
+    }
+  
+    100% {
+      transform: translateX(0);
+      /* Slide back to the original position */
+    }
+  }
+}

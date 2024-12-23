@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #35373b;
+    --secondary-color: #696fdd;
+    --secondary-color-dark: #a3a8f0;
+    --text-light: #d1d5db;
+    --white: #ffffff;
+    --max-width: 1300px;
+    --background-gradient: linear-gradient(135deg,
+            rgb(186, 190, 253) 0%,
+            rgb(66, 71, 158) 100%);
+    --background2: linear-gradient(180deg, #d6d9fa, rgb(149, 154, 243));
+}
+
+.giveaway {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    width: 30%;
+    padding: 0 10px;
+}
+
+.giveaway-1 {
+    padding-bottom: 2rem;
+}
+
+
+/* CARD  */
+.price__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.price__grid::-webkit-scrollbar {
+    height: 3px;
+}
+
+.price__grid::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.price__grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.price__card {
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    background: var(--background-gradient);
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    max-width: 300px;
+    flex-shrink: 0;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+}
+.price__card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.price__card__content {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.price__card__content img {
+    overflow: hidden;
+    position: absolute;
+    bottom: 9rem;
+    left: 7.50rem;
+}
+
+/* IMAGE SWING  */
+@keyframes swing {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.swing-animation {
+    display: inline-block;
+    animation: swing 2s ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    /* Repeats indefinitely */
+    transform-origin: top center;
+    /* Ensures swing rotates from the top */
+}
+
+.price__card h4 {
+    margin-bottom: 0.50rem;
+    font-size: 12.50px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.price__card h3 {
+    padding-bottom: 0.20rem;
+    margin-bottom: 0.50rem;
+    font-size: 1.50rem;
+    font-weight: 550;
+    color: var(--primary-color);
+    border-bottom: 0.20px solid var(--primary-color-extra-light);
+}
+
+.price__card p {
+    margin-bottom: 0.20rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.price__card p i {
+    margin-right: 0.5rem;
+    font-size: 0.70rem;
+    color:  rgb(46, 59, 175);
+}
+
+.hold {
+    display: flex;
+    justify-content: center;
+}
+
+.price__btn {
+    color: var(--white);
+    padding: 8px 30px;
+    border-radius: 30px;
+    border: none;
+    font-size: 12px;
+    font-weight: 550;
+    background-color: var(--secondary-color);
+}
+
+.price__btn:hover {
+    background-color: var(--secondary-color-dark);
+}
+
+.price__btn {
+    background-color: var(--secondary-color);
+    /* Initial background */
+    color: var(--text-light);
+    /* Text color */
+    border: 2px solid transparent;
+    /* Make border initially invisible */
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    /* Hide parts of the border outside */
+}
+
+.price__btn:hover {
+    transform: scale(1.1);
+    /* Slightly enlarges on hover */
+    opacity: 0.85;
+    background-color: var(--secondary-color-dark);
+    /* Change background on hover */
+}
+
+.price__btn {
+    background: linear-gradient(90deg, #070f18, #133857, #0d1d2e, #1f3786, #151a2b);
+    background-size: 400%;
+    /* Large enough gradient to make the animation smoother */
+    animation: background-animation 3s linear infinite;
+    /* Apply the animation */
+}
+
+@keyframes background-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* PENDING  */
+.price__card .pending {
+    color: var(--primary-color);
+}
+
+.hold .pending {
+    color: var(--text-light);
+}
+
+
+/* CONNECT EXNESS  */
+#toggle-box {
+    position: fixed;
+    top: 20%;
+    right: -300px;
+    width: 25%;
+    height: 100vh;
+    border-top-left-radius: 10px;
+    background: var(--primary-color-light);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/images/exness1.png');
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+#toggle-box.active {
+    right: 10px;
+    /* Slides into view */
+    opacity: 1;
+    /* Fully visible */
+}
+
+#toggle-box .close {
+    border: none;
+    padding: 4px;
+    border-radius: 50%;
+    color: var(--text-light);
+    font-size: 25px;
+    background: var(--background-gradient);
+}
+
+#toggle-box .close:hover {
+    background: var(--secondary-color);
+}
+
+
+#toggle-box .mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#toggle-box h4 {
+    color: var(--text-light);
+    font-size: 18px;
+}
+
+#toggle-box p {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+#toggle-box .connect {
+    font-size: 15px;
+    color: var(--text-light);
+    background: var(--background-gradient);
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 9px 20px;
+}
+
+#toggle-box .connect:hover {
+    background: var(--secondary-color);
+}
+
+
+
+
+
+/* FOR ADS  */
+.add{
+    color: var(--text-light);
+    font-size: 14px;
+}
+.ads {
+    /* box-shadow: 0 0px 10px var(--secondary-color); */
+    width: 100%;
+    height: 40vh;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    overflow: hidden; /* Ensure only one image is visible */
+    position: relative;
+}
+.ads img {
+    /* padding: 10px 5px; */
+    width: 100%;
+    position: absolute; /* Stack all images on top of each other */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
+}
+.ads img.active {
+    opacity: 1; /* Make the active image visible */
+}
+
+
+
+.review{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    color: var(--text-light);
+
+}
+.last{
+    /* box-shadow: 0 0px 6px var(--secondary-color); */
+    width: 100%;
+    height: 20vh;
+    border-radius: 5px;
+    color: var(--text-light);
+    font-weight: bold;
+    text-align: center;
+    font-size: 10px;
+    padding: 10px 5px;
+    overflow: hidden; /* Ensure only one image is visible */
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+    .giveaway {
+        display: flex;
+        flex-direction: column;
+        /* gap: 1rem; */
+        width: 100%;
+        padding: 0 10px;
+    }
+    .price__card h4 {
+        margin-bottom: 0.50rem;
+        font-size: 14.50px;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+    
+    .price__card p {
+        margin-bottom: 0.20rem;
+        color: var(--primary-color);
+        font-weight: bold;
+        font-size: 12px;
+    }
+    
+    .price__card p i {
+        margin-right: 0.5rem;
+        font-size: 0.70rem;
+        /* color: var(--primary-color); */
+    }
+
+
+
+
+
+
+
+    /* CONNECT EXNESS  */
+#toggle-box {
+    position: fixed;
+    top: 30%;
+    right: -300px;
+    width: 90%;
+    height: 100vh;
+    border-top-left-radius: 10px;
+    background: var(--primary-color-light);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/images/exness1.png');
+    padding: 20px;
+    z-index: 1000;
+    transition: right 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+#toggle-box.active {
+    right: 10px;
+    opacity: 1;
+}
+
+#toggle-box .close {
+    border: none;
+    padding: 4px;
+    border-radius: 50%;
+    color: var(--text-light);
+    font-size: 25px;
+    background: var(--background-gradient);
+}
+
+#toggle-box .close:hover {
+    background: var(--secondary-color);
+}
+
+
+#toggle-box .mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#toggle-box h4 {
+    color: var(--text-light);
+    font-size: 18px;
+}
+
+#toggle-box p {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+#toggle-box .connect {
+    font-size: 15px;
+    color: var(--text-light);
+    background: var(--background-gradient);
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 9px 20px;
+}
+
+#toggle-box .connect:hover {
+    background: var(--secondary-color);
+}
+
+
+
+
+.ads {
+    /* box-shadow: 0 4px 10px var(--secondary-color); */
+    width: 100%;
+    height: 40vh;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    overflow: hidden; /* Ensure only one image is visible */
+    position: relative;
+    margin-bottom: 10px;
+}
+
+
+.last{
+    /* box-shadow: 0 0px 6px var(--secondary-color); */
+    width: 100%;
+    height: 15vh;
+    border-radius: 5px;
+    color: var(--text-light);
+    font-weight: bold;
+    text-align: center;
+    font-size: 10px;
+    padding: 10px 5px;
+    overflow: hidden; /* Ensure only one image is visible */
+}
+
+}
