@@ -29,42 +29,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // GURUS LIST 
-const gurusContainer = document.querySelector('.gurus');
-const gurusImages = document.querySelectorAll('.gurus img');
 
-// Duplicate the images to create an infinite scrolling effect
-gurusImages.forEach(img => {
-    gurusContainer.appendChild(img.cloneNode(true));  // Clone and add images again
+
+
+
+
+
+// BECOME A MANGER 
+document.getElementById('toggleButton').addEventListener('click', function() {
+  // Toggle visibility of profile picture upload form
+  document.getElementById('profilePicSection').classList.toggle('hidden');
 });
 
-// Set the initial scroll speed and direction
-let scrollSpeed = 1; // Adjust the speed of scroll (higher = slower)
-let direction = 1; // 1 for left to right, -1 for right to left
+document.getElementById('profilePic').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  const previewImage = document.getElementById('previewImage');
+  
+  if (file) {
+      // Create a URL for the selected image file
+      const imageURL = URL.createObjectURL(file);
+      
+      // Show the preview section and update the image
+      document.getElementById('imagePreview').classList.remove('hidden');
+      previewImage.src = imageURL;
+  } else {
+      // If no file is selected, hide the preview
+      document.getElementById('imagePreview').classList.add('hidden');
+  }
+});
 
-// Function to move images
-function moveImages() {
-    // Move the images by scroll speed and direction
-    gurusContainer.scrollLeft += scrollSpeed * direction;
-
-    // Check if the images reached the end (scroll position is at the farthest right)
-    if (gurusContainer.scrollLeft >= gurusContainer.scrollWidth / 2) {
-        // Speed up the scroll back and reverse the direction
-        direction = -1; // Change direction to right to left
-        scrollSpeed = 2; // Speed up the scroll back
-    }
-
-    // Check if the images reached the start (scroll position is at the farthest left)
-    if (gurusContainer.scrollLeft <= 0) {
-        // Speed up the scroll forward and reverse the direction
-        direction = 1; // Change direction to left to right
-        scrollSpeed = 1; // Reset to normal speed
-    }
-
-    // Request the next frame for smooth continuous scrolling
-    requestAnimationFrame(moveImages);
-}
-
-// Start the animation loop
-requestAnimationFrame(moveImages);
-
-
+document.getElementById('submitPic').addEventListener('click', function() {
+  // Check if a file is selected (you can add more validation if needed)
+  const profilePic = document.getElementById('profilePic').files[0];
+  
+  if (profilePic) {
+      // Hide the profile pic upload section and show the success message
+      document.getElementById('profilePicSection').classList.add('hidden');
+      document.getElementById('successMessage').classList.remove('hidden');
+  } else {
+      alert('Please upload a profile picture.');
+  }
+});
