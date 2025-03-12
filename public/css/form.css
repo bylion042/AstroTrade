@@ -390,6 +390,12 @@
   
   
   @media (max-width: 870px) {
+
+    body{
+      height: 100vh;
+    }
+
+
     .container {
       min-height: 800px;
       height: 100vh;
@@ -429,6 +435,7 @@
       -ms-grid-rows: 1fr 2fr 1fr;
       grid-template-rows: 1fr 2fr 1fr;
     }
+
     .panel {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
@@ -465,7 +472,7 @@
       font-size: 1.40rem;
     }
     .panel__paragraph {
-      font-size: 11px;
+      font-size: 13px;
       padding: 0.5rem 0;
       margin-bottom: 1rem;
       font-weight: 600;

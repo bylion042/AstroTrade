@@ -882,7 +882,7 @@ data{
   position: relative;
   font-size: 1.50rem;
   cursor: pointer;
-  color: var(--secondary-color);
+  color: var(--text-light);
   z-index: 1100; /* Ensure it's above the menu */
 }
 
@@ -903,17 +903,15 @@ data{
 .hold3 {
   position: fixed;
   display: flex;
-  align-items: center;
   justify-content: center;
   top: -100%; /* Initially off-screen from the top */
   left: 0; /* Centered horizontally */
   width: 100%; /* Full width */
-  height: 40vh;
+  height: 35vh;
   background-color: var(--primary-color-light);
   padding: 0 2rem;
   flex-direction: column;
-  border-bottom-right-radius: 5rem;
-  border-bottom-left-radius: 5rem;
+  border-bottom-right-radius: 10rem;
   align-items: center;
   border-bottom: 1px solid var(--primary-color);
   box-shadow: 0px 4px 10px var(--primary-color);
@@ -931,7 +929,7 @@ data{
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .link a {
