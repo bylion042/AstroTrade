@@ -223,6 +223,11 @@ body {
     }
   }
 
+.sidebar{
+    display: none;
+}
+
+
 
 
 
@@ -230,6 +235,14 @@ body {
 
 /* Responsive */
 @media (max-width: 800px) {
+body{
+    height: 100vh;
+}
+
+.contain-hamburger{
+    display: none;
+}
+
     .overlay {
         padding: 10px 5px;
         position: static;
@@ -242,9 +255,14 @@ body {
         font-size: 12px;
         font-weight: 550;
     }
+
+    .passed{
+padding: 0 10px;
+    }
+
     .payment-details {
-        width: 90%;
-        margin-bottom: 1rem;
+        width: 100%;
+        margin-bottom: 0rem;
         position: static;
     }
     .mark {
