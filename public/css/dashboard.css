@@ -28,7 +28,7 @@ body {
 .logo {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding-top: 20px;
     font-size: 40px;
     color: #ccc;
@@ -41,7 +41,7 @@ body {
     height: 100%;
     width: 250px;
     background: var(--primary-color-light);
-    border-right: 0.10px solid var(--secondary-color-dark);
+    /* border-right: 0.10px solid var(--secondary-color-dark); */
     padding: 0 20px;
     transition: width 0.3s ease;
     z-index: 1000;
@@ -67,10 +67,10 @@ body {
     list-style: none;
     padding-bottom: 20px;
     display: flex;
-    gap: 0.50rem;
+    gap: 1rem;
     flex-direction: column;
-    border-bottom: 0.1px solid var(--secondary-color-dark);
-    margin-top: 1rem;
+    /* border-bottom: 0.1px solid var(--secondary-color-dark); */
+    margin-top: 0.50rem;
     width: 100%;
 }
 
@@ -110,6 +110,12 @@ body {
     font-size: 19px;
 }
 
+
+
+
+
+
+
 /* Sidebar hidden state */
 .sidebar.closed {
     transform: translateX(-100%);
@@ -122,7 +128,7 @@ body {
     top: 1rem;
     left: 250px;
     padding: 10px 5px;
-    border: 1px solid var(--secondary-color-dark);
+    /* border: 1px solid var(--secondary-color-dark); */
     cursor: pointer;
     transition: left 0.5s ease;
     /* Smoothly adjust the position */
@@ -227,6 +233,11 @@ data {
 
 
 /* Main Content */
+.small-sreen-nav{
+    display: none;
+}
+
+
 .main-content {
     flex-grow: 1;
     padding: 10px;
@@ -291,7 +302,7 @@ data {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/images/space9.jpeg');
+    background-image: url('/images/space5.jpeg');
 }
 
 .centered-content h2 {
@@ -328,7 +339,7 @@ data {
 /* DRAGABLE IMAGE  */
 .draggable-image {
     position: fixed;
-    top: 60%;
+    top: 70%;
     /* Middle of the screen vertically */
     right: 0;
     /* Right corner */
@@ -373,41 +384,33 @@ data {
     background: darkred;
 }
 
+
 /* FIXED CHART ICON  */
 .fixed-icon {
     position: fixed;
-    bottom: 20px;
-    /* Adjust spacing from the bottom */
-    right: 20px;
-    /* Adjust spacing from the right */
+    bottom: 70px;
+    right: 10px;
     width: 45px;
     height: 45px;
     background-color: var(--secondary-color);
-    /* Replace with your desired color */
     color: var(--text-light);
-    /* Icon color */
     border-radius: 50%;
-    /* Make it circular */
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    /* Optional shadow */
     cursor: pointer;
     z-index: 1000;
-    /* Ensure it stays above other elements */
     transition: transform 0.3s ease-in-out, background-color 0.3s ease;
 }
 
-.fixed-icon I {
+.fixed-icon i {
     font-size: 25px;
 }
 
 .fixed-icon:hover {
     background: var(--background-gradient);
-    /* Change color on hover */
     transform: scale(1.1);
-    /* Slight zoom on hover */
 }
 
 
@@ -422,66 +425,115 @@ data {
 
 
 @media (max-width: 800px) {
-    .logo {
-        margin-left: 1rem;
+/* Small Screen Navigation */
+.small-sreen-nav {
+    display: block;
+    position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--primary-color-light);
+    border: 1px solid var(--primary-color-extra-light);
+    padding: 10px 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(107, 117, 249, 0.5);
+}
+
+.link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.link-container a {
+    color: var(--secondary-color);
+    font-size: 22px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.link-container .p{
+    padding: 10px 14px;
+    background: var(--background-gradient);
+    border-radius: 50px;
+    color: var(--white);
+    position: absolute;
+    bottom: 25px;
+}
+.up{
+    margin-top: 1.50rem;
+}
+
+
+.link-container p {
+    font-size: 10px;
+    font-weight: bold;
+    color: #a3a2a2;
+}
+
+
+
+    .profile-summary {
+        padding: 0px;
+        margin-left: 0rem;
     }
 
-    .contain-hamburger {
-        display: block;
-        padding: 0px 20px;
-        padding-top: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        gap: 18rem;
-        border: 1px solid var(--secondary-color);
-        border-radius: 20px;
-    }
-
-    /* Main container for the hamburger */
-    .contain-hamburger {
-        position: fixed;
-        top: 0;
-        margin: 0 1rem;
-        margin-top: 0.50rem;
-        width: 90%;
-        z-index: 1000;
-        /* background: var(--primary-color-light);  */
+    .contain-hamburger{
+        width: 100%; /* Full width */
         padding: 5px 20px;
+        top: 0;
+        margin: 0px; /* Remove margins for full width */
+        z-index: 1000;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; /* Ensure space between items */
         align-items: center;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('/images/space5.jpeg');
+        /* background-image: url('/images/space5.jpeg'); */
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        /* Smooth transitions */
+        border-radius: 0; /* Remove border radius if not needed */
+        /* border: 1px solid var(--secondary-color); */
     }
-
-    /* Hidden state for scrolling down */
-    .contain-hamburger.hidden {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-
-    /* Visible state for scrolling up */
-    .contain-hamburger.visible {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
+    
+   
+    
+    /* Adjust the inner "me" div */
     .contain-hamburger .me {
         display: flex;
-        justify-content: center;
+        justify-content: space-between; /* Ensure space between elements */
         align-items: center;
-        gap: 14rem;
+        width: 100%; /* Make it take full width */
     }
-
-    .centered-content {
-        background-size: contain;
+    
+    /* Profile picture adjustments */
+    .profile-pic {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        object-fit: cover;
     }
+    
+    /* Hamburger menu icon adjustments */
+    .hamburger {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .hamburger i {
+        font-size: 24px;
+        color: #fff;
+    }
+    
 
 
 
@@ -492,9 +544,7 @@ data {
         left: -100%;
         width: 250px;
         height: 100%;
-        /* background: var(--primary-color-light); */
         background: var(--primary-color);
-        border-right: 0.90px solid var(--secondary-color-dark);
         transition: left 0.60s ease-in-out;
         z-index: 1000;
         display: flex;
@@ -505,7 +555,8 @@ data {
         display: flex;
         flex-direction: column;
         padding: 20px;
-        margin-top: 3rem;
+        margin-top: 0rem;
+        border-bottom: none;
     }
 
     .menu a {
@@ -522,16 +573,12 @@ data {
         cursor: pointer;
         right: 5rem;
     }
-
-    .hamburger i {
-        font-size: 27px;
-        color: var(--secondary-color);
-    }
     
 
     .sidebar {
         display: none;
     }
+
 
     /* Arrow to toggle sidebar */
     .toggle-sidebar {
@@ -555,7 +602,8 @@ data {
     }
 
     .centered-content {
-        margin-top: 4.50rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
         padding: 15px 0px;
     }
 
@@ -569,13 +617,20 @@ data {
 
 
     .draggable-image img {
-        max-width: 70px;
+        max-width: 80px;
     }
     .draggable-image {
-        top: 70%;
+        top: 75%;
+        right: 5px;
     }
-
-
+    .close-btn {
+        top: 5px;
+        right: 1px;
+        width: 17px;
+        height: 17px;
+    font-size: 16px;
+        background: rgb(240, 100, 100);
+    }
 
 
 

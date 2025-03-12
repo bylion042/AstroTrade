@@ -1,137 +1,45 @@
-
 <div class="instruction">
-    <!-- <i class="ri-spam-2-line"></i> -->
-    <p>Heads up! Competition Accounts activate on the 1st of each month, along with registrations for the following month's competition.</p>
+    <p>Heads up! Competition Accounts activate on the 1st of each month, along with registrations for the following
+       month's competition.
+    </p>
+</div>
+
+
+<!-- ABOUT PHASE -->
+<div class="phase-section">
+    <h3>Pass Just Phase 1</h3>
+    <div>
+        <div class="button-group">
+            <button class="info-btn" data-target="how-it-works">How it Works</button>
+            <button class="info-btn" data-target="about-phase">About Phase</button>
+        </div>
+        <div class="details-container">
+            <div id="how-it-works" class="details-content">
+                <p>
+                    <li>
+                        Compete against top traders in an exclusive 50-person tournament, where skill meets opportunity.
+                        Outperform the competition and claim the grand prize. Spots are limited—will you be the next
+                        champion?
+                    </li>
+                </p>
+            </div>
+            <div id="about-phase" class="details-content">
+                <p>
+                    <li>Meet a profit target within a time range(e.g., in 30 days).__Stay within risk limits: daily loss
+                        (e.g., 5%) and total drawdown (e.g.,
+                        10%).__Evaluation goal is to prove profitability and risk management skills over a
+                        specific trading period.</li>
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <h3>Competition lists</h3>
 
+
+
 <div class="competition-lists">
-    <!-- PENDING  -->
-    <!-- <div class="competition-card">
-        <div class="state">
-            <span class="status upcoming" id="status1">Upcoming</span>
-        </div>
-        <div class="header">
-            <img src="/images/cup1.png" class="shaking-image" width="20%">
-            <span class="title">January Competition</span>
-        </div>
-        <div class="details">
-            <div class="date"><span class="label">Start:</span><span class="value">Jan 1, 2025</span></div>
-            <div class="date"><span class="label">End:</span><span class="value">Jan 31, 2025</span></div>
-            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of Challenge Account</span></div>
-            <div class="contestants"><span class="label">Contestants:</span><span class="value">163</span></div>
-            <div class="date"><span class="label">Account-size:</span><span class="value">$50,000</span></div>
-        </div>
-        <div class="countdown" id="countdown1">
-            <span class="label">
-                Time Until Start (GMT+2:00)
-            </span>
-            <span class="value">
-                15 Days 20 Hours 57 Min 31 Sec
-            </span>
-        </div>
-        <div class="actions">
-            <button class="details-btn">Details</button>
-            <button class="enroll-btn">Enroll</button>
-        </div>
-    </div> -->
-    <div class="competition-card">
-        <div class="state">
-            <span class="status upcoming" id="status1">Upcoming</span>
-        </div>
-        <div class="header">
-            <img src="/images/cup1.png" class="shaking-image" width="20%">
-            <span class="title">January Competition</span>
-        </div>
-        <div class="details">
-            <div class="date"><span class="label">Start:</span><span class="value">Jan 1, 2025</span></div>
-            <div class="date"><span class="label">End:</span><span class="value">Jan 31, 2025</span></div>
-            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75M worth of Challenge Account</span></div>
-            <div class="contestants"><span class="label">Contestants:</span><span class="value">163</span></div>
-            <div class="date"><span class="label">Account-size:</span><span class="value">$50,000</span></div>
-        </div>
-        <div class="countdown" id="countdown1">
-            <span class="label">
-                Time Until Start (GMT+2:00)
-            </span>
-            <span class="value">
-                15 Days 20 Hours 57 Min 31 Sec
-            </span>
-        </div>
-        <div class="actions">
-            <button class="details-btn">Details</button>
-            <button class="enroll-btn" onclick="showEmailPopup()">Enroll</button>
-        </div>
-    </div>
-    
-    <!-- Email Input Modal -->
-<div class="modal" id="emailModal">
-    <div class="modal-content">
-        <h2>Enroll in January Competition</h2>
-        <p>Please enter your email address to enroll:</p>
-        <input 
-            type="email" 
-            id="emailInput" 
-            placeholder="Enter your email" 
-            required
-        > <br> <br>
-        <button onclick="submitEnrollment()">Submit</button>
-        <button onclick="closeModal()">Cancel</button>
-    </div>
-    <img src="/images/mark.png" class="mark">
-</div>
-
-    <!-- Confirmation Modal -->
-    <div class="modal" id="confirmationModal">
-        <div class="modal-content">
-            <h2>Enrollment Confirmed</h2>
-            <p>Your login details will be sent to you two days before the competition via your email.</p>
-            <button onclick="closeModal()">Noted</button>
-        </div>
-    <img src="/images/mark.png" class="mark">
-    </div>
-    
-
-
-
-
-
-
-    <!-- IN PROGRESS  -->
-    <div class="competition-card">
-        <div class="state">
-            <span class="status in-progress">In Progress</span>
-        </div>
-        <div class="header">
-            <img src="/images/cup1.png" class="shaking-image" width="20%">
-            <span class="title">December Competition</span>
-        </div>
-       <div class="details">
-            <div class="date"><span class="label">Start:</span><span class="value">Jan 1, 2025</span></div>
-            <div class="date"><span class="label">End:</span><span class="value">Jan 31, 2025</span></div>
-            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of Challenge Account</span></div>
-            <div class="contestants"><span class="label">Contestants:</span><span class="value">2010</span></div>
-            <div class="date"><span class="label">Account-size:</span><span class="value">$50,000</span></div>
-        </div>
-        <div class="countdown" id="countdown2">
-            <span class="label">
-                Time Remaining (GMT+2:00)
-            </span>
-            <span class="value">
-                15 Days 10 Hours 57 Min 31 Sec
-            </span>
-        </div>
-        <div class="actions">
-            <button class="details-btn">Details</button>
-            <button class="enroll-btn" disabled>Enroll</button>
-        </div>
-    </div>
-
-
-
-
-
     <!-- FINISHED  -->
     <div class="competition-card">
         <div class="state">
@@ -139,12 +47,13 @@
         </div>
         <div class="header">
             <img src="/images/cup1.png" class="shaking-image" width="20%">
-            <span class="title">August Competition</span>
+            <span class="title">March Competition</span>
         </div>
         <div class="details">
-            <div class="date"><span class="label">Start:</span><span class="value">Jan 1, 2025</span></div>
-            <div class="date"><span class="label">End:</span><span class="value">Jan 31, 2025</span></div>
-            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of Challenge Account</span></div>
+            <div class="date"><span class="label">Start:</span><span class="value">March 1, 2025</span></div>
+            <div class="date"><span class="label">End:</span><span class="value">March 31, 2025</span></div>
+            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of
+                    Challenge Account</span></div>
             <div class="contestants"><span class="label">Contestants:</span><span class="value">1500</span></div>
             <div class="date"><span class="label">Account-size:</span><span class="value">$50,000</span></div>
         </div>
@@ -152,9 +61,10 @@
         </div>
         <div class="actions">
             <button class="details-btn">Details</button>
-            <button class="enroll-btn" disabled>🏆  Winners</button>
+            <button class="enroll-btn" disabled>🏆 Winners</button>
         </div>
     </div>
+
 
     <div class="competition-card">
         <div class="state">
@@ -162,22 +72,100 @@
         </div>
         <div class="header">
             <img src="/images/cup1.png" class="shaking-image" width="20%">
-            <span class="title">September Competition</span>
+            <span class="title">Febuary Competition</span>
         </div>
         <div class="details">
-            <div class="date"><span class="label">Start:</span><span class="value">Jan 1, 2025</span></div>
-            <div class="date"><span class="label">End:</span><span class="value">Jan 31, 2025</span></div>
-            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of Challenge Account</span></div>
-            <div class="contestants"><span class="label">Contestants:</span><span class="value">100</span></div>
+            <div class="date"><span class="label">Start:</span><span class="value">Febuary 1, 2025</span></div>
+            <div class="date"><span class="label">End:</span><span class="value">Febuary 29, 2025</span></div>
+            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of
+                    Challenge Account</span></div>
+            <div class="contestants"><span class="label">Contestants:</span><span class="value">1500</span></div>
             <div class="date"><span class="label">Account-size:</span><span class="value">$50,000</span></div>
         </div>
-        <div class="countdown"><span>Finished On September 30, 2024</span><span class="value"></span>
+        <div class="countdown"><span>Finished On August 29, 2024</span><span class="value"></span>
         </div>
         <div class="actions">
             <button class="details-btn">Details</button>
             <button class="enroll-btn" disabled>🏆 Winners</button>
         </div>
     </div>
+
+
+
+    <div class="competition-card">
+        <div class="state">
+            <span class="status finished">Finished</span>
+        </div>
+        <div class="header">
+            <img src="/images/cup1.png" class="shaking-image" width="20%">
+            <span class="title">January Competition</span>
+        </div>
+        <div class="details">
+            <div class="date"><span class="label">Start:</span><span class="value">January 1, 2025</span></div>
+            <div class="date"><span class="label">End:</span><span class="value">January 31, 2025</span></div>
+            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of
+                    Challenge Account</span></div>
+            <div class="contestants"><span class="label">Contestants:</span><span class="value">1500</span></div>
+            <div class="date"><span class="label">Account-size:</span><span class="value">$50,000</span></div>
+        </div>
+        <div class="countdown"><span>Finished On August 31, 2024</span><span class="value"></span>
+        </div>
+        <div class="actions">
+            <button class="details-btn">Details</button>
+            <button class="enroll-btn" disabled>🏆 Winners</button>
+        </div>
+    </div>
+
+
+    <div class="competition-card">
+        <div class="state">
+            <span class="status finished">Finished</span>
+        </div>
+        <div class="header">
+            <img src="/images/cup1.png" class="shaking-image" width="20%">
+            <span class="title">December Competition</span>
+        </div>
+        <div class="details">
+            <div class="date"><span class="label">Start:</span><span class="value">December 1, 2024</span></div>
+            <div class="date"><span class="label">End:</span><span class="value">December 31, 2024</span></div>
+            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of
+                    Challenge Account</span></div>
+            <div class="contestants"><span class="label">Contestants:</span><span class="value">1500</span></div>
+            <div class="date"><span class="label">Account-size:</span><span class="value">$50,000</span></div>
+        </div>
+        <div class="countdown"><span>Finished On August 31, 2024</span><span class="value"></span>
+        </div>
+        <div class="actions">
+            <button class="details-btn">Details</button>
+            <button class="enroll-btn" disabled>🏆 Winners</button>
+        </div>
+    </div>
+
+
+    <div class="competition-card">
+        <div class="state">
+            <span class="status finished">Finished</span>
+        </div>
+        <div class="header">
+            <img src="/images/cup1.png" class="shaking-image" width="20%">
+            <span class="title">November Competition</span>
+        </div>
+        <div class="details">
+            <div class="date"><span class="label">Start:</span><span class="value">November 1, 2024</span></div>
+            <div class="date"><span class="label">End:</span><span class="value">November 30, 2024</span></div>
+            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of
+                    Challenge Account</span></div>
+            <div class="contestants"><span class="label">Contestants:</span><span class="value">2570</span></div>
+            <div class="date"><span class="label">Account-size:</span><span class="value">$50,000</span></div>
+        </div>
+        <div class="countdown" id="countdown3"><span>Finished On November 30, 2024</span><span class="value"></span>
+        </div>
+        <div class="actions">
+            <button class="details-btn">Details</button>
+            <button class="enroll-btn" disabled>🏆 Winners</button>
+        </div>
+    </div>
+
 
     <div class="competition-card">
         <div class="state">
@@ -188,9 +176,10 @@
             <span class="title">October Competition</span>
         </div>
         <div class="details">
-            <div class="date"><span class="label">Start:</span><span class="value">Jan 1, 2025</span></div>
-            <div class="date"><span class="label">End:</span><span class="value">Jan 31, 2025</span></div>
-            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of Challenge Account</span></div>
+            <div class="date"><span class="label">Start:</span><span class="value">October 1, 2024</span></div>
+            <div class="date"><span class="label">End:</span><span class="value">October 31, 2024</span></div>
+            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of
+                    Challenge Account</span></div>
             <div class="contestants"><span class="label">Contestants:</span><span class="value">1870</span></div>
             <div class="date"><span class="label">Account-size:</span><span class="value">$50,000</span></div>
         </div>
@@ -202,28 +191,59 @@
         </div>
     </div>
 
+
     <div class="competition-card">
         <div class="state">
             <span class="status finished">Finished</span>
         </div>
         <div class="header">
             <img src="/images/cup1.png" class="shaking-image" width="20%">
-            <span class="title">November Competition</span>
+            <span class="title">September Competition</span>
         </div>
         <div class="details">
-            <div class="date"><span class="label">Start:</span><span class="value">Jan 1, 2025</span></div>
-            <div class="date"><span class="label">End:</span><span class="value">Jan 31, 2025</span></div>
-            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of Challenge Account</span></div>
-            <div class="contestants"><span class="label">Contestants:</span><span class="value">2570</span></div>
+            <div class="date"><span class="label">Start:</span><span class="value">September 1, 2024</span></div>
+            <div class="date"><span class="label">End:</span><span class="value">September 30, 2024</span></div>
+            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of
+                    Challenge Account</span></div>
+            <div class="contestants"><span class="label">Contestants:</span><span class="value">100</span></div>
             <div class="date"><span class="label">Account-size:</span><span class="value">$50,000</span></div>
         </div>
-        <div class="countdown" id="countdown3"><span>Finished On November 30, 2024</span><span class="value"></span>
+        <div class="countdown"><span>Finished On September 30, 2024</span><span class="value"></span>
         </div>
         <div class="actions">
             <button class="details-btn">Details</button>
             <button class="enroll-btn" disabled>🏆 Winners</button>
         </div>
     </div>
+
+
+    <div class="competition-card">
+        <div class="state">
+            <span class="status finished">Finished</span>
+        </div>
+        <div class="header">
+            <img src="/images/cup1.png" class="shaking-image" width="20%">
+            <span class="title">August Competition</span>
+        </div>
+        <div class="details">
+            <div class="date"><span class="label">Start:</span><span class="value">August 1, 2024</span></div>
+            <div class="date"><span class="label">End:</span><span class="value">August 31, 2024</span></div>
+            <div class="date"><span class="label">Prize Pool:</span><span class="value">$30,000+ Cash & $2.75Mworth of
+                    Challenge Account</span></div>
+            <div class="contestants"><span class="label">Contestants:</span><span class="value">1500</span></div>
+            <div class="date"><span class="label">Account-size:</span><span class="value">$50,000</span></div>
+        </div>
+        <div class="countdown"><span>Finished On August 31, 2024</span><span class="value"></span>
+        </div>
+        <div class="actions">
+            <button class="details-btn">Details</button>
+            <button class="enroll-btn" disabled>🏆 Winners</button>
+        </div>
+    </div>
+
+
+
 </div>
 
-<p class="note">Showcase your trading skills and compete for the top spot in an exciting challenge. Take on fellow traders, push your limits, and aim for victory. prove You have what it takes to come out on top.</p>
+<p class="note">Showcase your trading skills and compete for the top spot in an exciting challenge. Take on fellow
+    traders, push your limits, and aim for victory. prove You have what it takes to come out on top.</p>

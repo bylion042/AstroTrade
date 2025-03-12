@@ -126,7 +126,7 @@ nav {
 }
 
 .header__container::before {
-  content: "NOVA-X";
+  content: "_ASTRO_";
   position: absolute;
   bottom: 5rem;
   right: 20rem;
@@ -217,6 +217,11 @@ nav {
 }
 
 .explore__card:hover {
+  background-color: var(--primary-color-extra-light);
+  border-color: var(--secondary-color);
+}
+
+.act{
   background-color: var(--primary-color-extra-light);
   border-color: var(--secondary-color);
 }
@@ -866,16 +871,16 @@ data{
 }
 
 .hamburger {
-  font-size: 2rem;
+  font-size: 1.50rem;
   cursor: pointer;
-  color: var(--secondary-color);
+  color: var(--white);
   margin: 0 1rem;
 }
 
 /* Hamburger Icon Styles */
 .hamburger {
   position: relative;
-  font-size: 2rem;
+  font-size: 1.50rem;
   cursor: pointer;
   color: var(--secondary-color);
   z-index: 1100; /* Ensure it's above the menu */
@@ -886,8 +891,7 @@ data{
   position: absolute;
   top: 1rem;
   right: 1rem;
-  font-size: 2rem;
-  color: var(--secondary-color);
+  color: var(--white);
 }
 
 /* Hide unfold icon initially */
@@ -950,7 +954,8 @@ data{
   .section__container {
     width: 100%;
     margin: 0;
-    padding: 2rem 10px;
+    padding: 2rem 15px;
+    margin-bottom: 3rem;
   }
 
   .header__image::before {
@@ -983,11 +988,12 @@ data{
   .header__content h4 {
     font-size: 11px;
     color: var(--secondary-color-dark);
+    margin-top: 2rem;
   }
 
   .header__content h1 {
     margin-bottom: 1rem;
-    font-size: 3.25rem;
+    font-size: 3rem;
     line-height: 4rem;
   }
 
@@ -1021,6 +1027,14 @@ data{
   .explore__card p {
     font-size: 11px;
   }
+  .explore__card span {
+    font-size: 1.50rem;
+  }
+
+  .act{
+    background-color: var(--primary-color-extra-light);
+    border-color: var(--secondary-color);
+  }
 
 
   .class__container {
@@ -1044,6 +1058,7 @@ data{
 
   .class__content {
     padding: 0rem;
+    margin-bottom: 3rem;
   }
 
   .class__content h2 {
@@ -1056,7 +1071,7 @@ data{
   }
 
   .cards {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   display: flex;
     justify-content: flex-start; /* Start aligned, but the active card will be centered */
     align-items: center;

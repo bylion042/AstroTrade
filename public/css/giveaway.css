@@ -28,7 +28,7 @@
 }
 
 .giveaway-1 {
-    padding-bottom: 2rem;
+    padding-bottom: 0rem;
 }
 
 
@@ -43,6 +43,7 @@
     scroll-behavior: smooth;
     width: 100%;
     padding: 10px 0;
+    margin-bottom: 2rem;
 }
 
 .price__grid::-webkit-scrollbar {
@@ -86,7 +87,7 @@ cursor: pointer;
 .price__card__content img {
     overflow: hidden;
     position: absolute;
-    bottom: 9rem;
+    bottom: 9.50rem;
     left: 7.50rem;
 }
 
@@ -141,7 +142,7 @@ cursor: pointer;
 
 .price__card p {
     margin-bottom: 0.20rem;
-    color: var(--primary-color);
+    color: var(--primary-color-extra-light);
     font-weight: bold;
     font-size: 11px;
 }
@@ -228,21 +229,20 @@ cursor: pointer;
 }
 
 
-/* CONNECT EXNESS  */
+/* CONNECT FLUTTERWAVE  */
 #toggle-box {
     position: fixed;
-    top: 20%;
+    top: 30%;
     right: -300px;
-    width: 25%;
+    width: 24%;
     height: 100vh;
-    border-top-left-radius: 10px;
     background: var(--primary-color-light);
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/images/exness1.png');
+    background-image: url('/images/Flutterwave.png');
     padding: 20px;
     z-index: 1000;
     transition: right 0.5s ease, opacity 0.3s ease;
@@ -251,9 +251,7 @@ cursor: pointer;
 
 #toggle-box.active {
     right: 10px;
-    /* Slides into view */
     opacity: 1;
-    /* Fully visible */
 }
 
 #toggle-box .close {
@@ -284,25 +282,26 @@ cursor: pointer;
 }
 
 #toggle-box p {
-    text-align: center;
+    /* text-align: center; */
     color: var(--text-light);
     font-size: 14px;
+    line-height: 18px;
 }
 
 #toggle-box .connect {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--text-light);
-    background: var(--background-gradient);
     border-radius: 5px;
     border: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     padding: 9px 20px;
+    background: var(--secondary-color);
 }
 
 #toggle-box .connect:hover {
-    background: var(--secondary-color);
+    background: var(--background-gradient);
 }
 
 
@@ -353,8 +352,8 @@ cursor: pointer;
     border-radius: 5px;
     color: var(--text-light);
     font-weight: bold;
-    text-align: center;
-    font-size: 10px;
+    /* text-align: center; */
+    font-size: 12px;
     padding: 10px 5px;
     overflow: hidden; /* Ensure only one image is visible */
 }
@@ -376,6 +375,10 @@ cursor: pointer;
         width: 100%;
         padding: 0 10px;
     }
+    .giveaway-1 {
+        padding-bottom: 1rem;
+    }
+
     .price__card h4 {
         margin-bottom: 0.50rem;
         font-size: 14.50px;
@@ -385,7 +388,7 @@ cursor: pointer;
     
     .price__card p {
         margin-bottom: 0.20rem;
-        color: var(--primary-color);
+        color: var(--primary-color-extra-light);
         font-weight: bold;
         font-size: 12px;
     }
@@ -396,6 +399,12 @@ cursor: pointer;
         /* color: var(--primary-color); */
     }
 
+    .price__card__content img {
+        overflow: hidden;
+        position: absolute;
+        bottom: 9.50rem;
+        left: 8.50rem;
+    }
 
 
 
@@ -405,18 +414,21 @@ cursor: pointer;
     /* CONNECT EXNESS  */
 #toggle-box {
     position: fixed;
-    top: 30%;
+    top: 35%;
     right: -300px;
-    width: 90%;
+    width: 100%;
     height: 100vh;
-    border-top-left-radius: 10px;
     background: var(--primary-color-light);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/images/exness1.png');
+    background-image: url('/images/Flutterwave.png');
+    border: 1px solid var(--primary-color-light);
+    box-shadow: 0 0 10px rgba(107, 117, 249, 0.5);
     padding: 20px;
     z-index: 1000;
     transition: right 0.5s ease, opacity 0.3s ease;
@@ -424,7 +436,7 @@ cursor: pointer;
 }
 
 #toggle-box.active {
-    right: 10px;
+    right: 0px;
     opacity: 1;
 }
 
@@ -456,21 +468,29 @@ cursor: pointer;
 }
 
 #toggle-box p {
-    text-align: center;
+    /* text-align: center; */
     color: var(--text-light);
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: bold;
+}
+#toggle-box .prof {
+    font-size: 14px;
+    color: var(--secondary-color-dark);
+    text-decoration: underline;
 }
 
 #toggle-box .connect {
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: bold;
     color: var(--text-light);
     background: var(--background-gradient);
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    padding: 9px 20px;
+    padding: 10px 20px;
+    margin-top: 2rem;
 }
 
 #toggle-box .connect:hover {
@@ -496,12 +516,13 @@ cursor: pointer;
 .last{
     /* box-shadow: 0 0px 6px var(--secondary-color); */
     width: 100%;
-    height: 15vh;
+    height: 22vh;
+    line-height: 17px;
     border-radius: 5px;
     color: var(--text-light);
-    font-weight: bold;
-    text-align: center;
-    font-size: 10px;
+    /* font-weight: bold; */
+    /* text-align: center; */
+    font-size: 12px;
     padding: 10px 5px;
     overflow: hidden; /* Ensure only one image is visible */
 }

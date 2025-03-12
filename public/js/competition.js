@@ -1,3 +1,29 @@
+// TWO BUTTONS FOR INFO 
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".info-btn");
+  
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const targetId = button.getAttribute("data-target");
+        const targetContent = document.getElementById(targetId);
+  
+        // Toggle active state
+        targetContent.classList.toggle("active");
+  
+        // Close other details
+        document.querySelectorAll(".details-content").forEach(content => {
+          if (content !== targetContent) {
+            content.classList.remove("active");
+          }
+        });
+      });
+    });
+  });
+
+
+
+
+
 // TIME FUNCTIONALITY 
 // UPCOMING, FINISHED, PENDING
 function updateCountdown(endDate, elementId, statusElementId) {

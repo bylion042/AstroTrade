@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutterwave</title>
+  <link rel="icon" href="/images/Flutterwave.png">
+    <link rel="stylesheet" href="/css/flutterwave.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css">
+</head>
+
+<body>
+
+    <div class="payment-container">
+
+        <!-- ALL ABOUT THE BOX  2 -->
+        <div class="payment-box1">
+
+            <div class="box">
+                <div class="lang" onclick="toggleDropdown()">
+                    <p>English <i class="ri-arrow-down-s-line"></i></p>
+                    <div class="dropdown-menu">
+                        <p class="active">English</p>
+                        <p>Français</p>
+                        <p>Deutsch</p>
+                    </div>
+                </div>
+            
+                <script>
+                    function toggleDropdown() {
+                        var dropdown = document.querySelector(".dropdown-menu");
+                        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+                    }
+            
+                    // Close dropdown if clicking outside
+                    document.addEventListener("click", function (event) {
+                        var langDiv = document.querySelector(".lang");
+                        if (!langDiv.contains(event.target)) {
+                            document.querySelector(".dropdown-menu").style.display = "none";
+                        }
+                    });
+                </script>
+            
+                <div class="header">
+                    <div class="pium">
+                        <img src="/images/favicon.png" alt="Logo" class="logo">
+                        <div class="header-text">
+                            <p>Admin <%= user.username %></p>
+                            <p><%= user.email %></p>
+                        </div>
+                    </div>
+            
+                    <div class="amount">
+                        <p>USD 0.5</p>
+                        <span class="tooltip-trigger">Transaction breakdown ⓘ
+                            <div class="tooltip">
+                                <p><strong>Breakdown</strong></p>
+                                <p>Amount: -------- 0.5</p>
+                                <p>Total: ------ USD 0.5</p>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            
+                <h2>Enter your card details to pay</h2>
+            
+                <form id="payment-form">
+                    <label for="card-number">CARD NUMBER</label>
+                
+                    <div class="input-group1">
+                        <img src="/images/2.png" alt="Card Icon" class="input-icon">
+                        <input type="text" id="card-number" name="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                        <script>
+                            document.getElementById("card-number").addEventListener("input", function (e) {
+                                let value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+                                value = value.replace(/(.{4})/g, "$1 ").trim(); // Add space every 4 digits
+                                e.target.value = value;
+                            });
+                        </script>
+                        <img src="/images/4.png" alt="Lock Icon" class="security-icon">
+                    </div>
+                
+                    <div class="card-logos">
+                        <img src="/images/5.png" alt="Visa">
+                    </div>
+                
+                    <div class="card-details">
+                        <div class="input-group">
+                            <label for="expiry">VALID TILL</label>
+                
+                            <div class="mm">
+                                <img src="/images/2.png" alt="Flag Icon" class="input-icon">
+                                <input type="text" id="mm/yy" name="expiryDate" placeholder="MM/YY" maxlength="7" required>
+                                <script>
+                                    document.getElementById("mm/yy").addEventListener("input", function (e) {
+                                        let value = e.target.value.replace(/D/g, ""); 
+                                        e.target.value = value;
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                
+                        <div class="input-group">
+                            <label for="cvv">CVV</label>
+                
+                            <span class="trigger help-text">What is this?
+                                <div class="tooltip">
+                                    <img src="/images/3.png" alt="">
+                                    <p><strong>What is a CVV</strong></p>
+                                    <p>
+                                       Your CVV is the 3 or 4 digits number located on the back of the credit/debit card
+                                       on the right hand side of the white signaure strip.
+                                    </p>
+                                </div>
+                            </span>
+                
+                            <div class="cvv">
+                                <img src="/images/1.png" alt="CVV Icon" class="input-icon">
+                                <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                                <script>
+                                    document.getElementById("cvv").addEventListener("input", function (e) {
+                                        let value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+                                        e.target.value = value;
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="remember-card">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember this card next time</label>
+                    </div>
+                
+                    <!-- <button type="submit" class="pay-button">Pay USD 0.5</button> -->
+
+ <!-- Make Payment Button -->
+<button type="submit" class="pay-button confirm-button" onclick="validateAndShowSpinner(event)">Pay USD 0.5</button>
+
+<!-- Spinner Wrapper -->
+<div id="spinner-container" style="display: none;">
+    <div class="spinner"></div>
+</div>
+
+
+
+
+                
+                    <a href="/deposit" class="cancel">Cancel</a>
+                </form>
+            </div>
+            
+
+
+            <div class="secure big">
+                <img src="/images/6.png" alt="">
+            </div>
+        </div>
+            <div class="small">
+                <img src="/images/6.png" alt="">
+            </div>
+
+
+        <!-- ALL ABOUT THE BOX  2 -->
+        <div class="payment-box2">
+            <a href="/deposit"><img src="/images/7.png" alt="" class="close-button" width="5%"></a>
+
+            <div class="payment-options">
+                <h2>PAYMENT OPTIONS</h2>
+                <div class="option">
+                    <img src="/images/8.png" alt="">
+                    <span>Card</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/flutterwave.js"></script>
+</body>
+</html>

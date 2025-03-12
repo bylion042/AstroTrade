@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deposit</title>
+    <link rel="icon" href="/images/Flutterwave.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/deposit.css">
+</head>
+
+<body>
+    <!-- BACKGROUND BLUR -->
+    <span class="bg__blur"></span>
+    <span class="bg__blur footer__blur"></span>
+
+
+    <div class="centered-content1">
+        <div class="overlay">
+            <h2>Secure Access</h2>
+            <p>
+                Complete your payment to unlock exclusive features and benefits. Your transaction is safe and secure,
+                and once completed, you'll gain immediate access to the services you need.
+            </p>
+        </div>
+
+        <div class="passed">
+            <img src="/images/mark.png" class="mark">
+
+            <div class="payment-details">
+                <h1>Selected Options</h1>
+                <div class="purchase">
+                    <p>Package:</p>
+                    <p class="content">Become an Admine</p>
+                </div>
+
+                <div id="passed-content">
+                    Amount to Pay:
+                    <p id="amountToPay">
+                        $0.50
+                    </p>
+                </div>
+
+                <!-- Make Payment Button -->
+                <button class="confirm-button" onclick="showSpinner()">Make Payment</button>
+
+                <!-- Spinner Wrapper -->
+                <div id="spinner-container">
+                    <div class="spinner"></div>
+                </div>
+
+                <script>
+                    function showSpinner() {
+                        // Show the spinner container
+                        document.getElementById("spinner-container").style.display = "flex";
+                        // Wait for 3 seconds before redirecting
+                        setTimeout(() => {
+                            window.location.href = "/flutterwave"; // Change this to the correct page URL
+                        }, 5000);
+                    }
+                </script>
+
+                <a href="/dashboard" class="back-link"><i class="ri-arrow-left-line"></i> Back Home</a>
+            </div>
+        </div>
+
+
+
+        <script src="https://kit.fontawesome.com/b3fa93e021.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

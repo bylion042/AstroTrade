@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard</title>
-    <link rel="icon" href="/images/logo.png">
+    <link rel="icon" href="/images/favicon.png" sizes="900x900">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="/css/giveaway.css">
     <link rel="stylesheet" href="/css/original.css">
     <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/read-more.css">
 </head>
 
 <body>
@@ -34,6 +35,12 @@
                             <%- include('partials/giveaway') %>
                     </div>
 
+
+
+            <!-- INCLUDE READ MORE STATISTICS  -->
+            <%- include('partials/read-more') %>
+
+
             </main>
 
 
@@ -56,6 +63,8 @@
             }).showToast();
         </script>
         <% } %>
+
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <!-- <script src="https://kit.fontawesome.com/b3fa93e021.js" crossorigin="anonymous"></script> -->
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script src="/js/giveaway.js"></script>

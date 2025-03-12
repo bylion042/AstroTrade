@@ -80,6 +80,9 @@ cursor: pointer;
     align-items: center;
     margin-top: 3px;
 }
+.green{
+    color: #00695c;
+}
 
 
 
@@ -119,6 +122,7 @@ cursor: pointer;
         width: 100%;
         padding: 10px;
         border-right: none;
+        margin-top: 1rem;
         }
 
 
@@ -130,6 +134,7 @@ cursor: pointer;
     gap: 10px;
     width: 100%;                                                                                                                                                                                
     flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
 .cards a{
@@ -168,6 +173,10 @@ cursor: pointer;
         font-size: 11px;
     }
 
+
+    .pium{
+margin-bottom: 2rem;
+    }
 
     /* CANCAS CHART  */
     .pium h1{

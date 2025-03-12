@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #35373b;
+    --secondary-color: #696fdd;
+    --secondary-color-dark: #a3a8f0;
+    --text-light: #d1d5db;
+    --white: #ffffff;
+    --max-width: 1300px;
+    --background-gradient: linear-gradient(135deg, 
+            rgb(186, 190, 253) 0%, 
+            rgb(66, 71, 158) 100%);
+    --background2: linear-gradient(180deg, #d6d9fa, rgb(149, 154, 243));
+}
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--primary-color);
+    color: var(--text-light);
+    width: 100%;
+    height: 100vh;
+    background: url('/images/download2.png') center/cover no-repeat;
+
+}
+
+/* Centered Content */
+.centered-content1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Overlay */
+.overlay {
+    /* text-align: center; */
+    width: 100%;
+    padding: 20px 0 90px;
+    margin: 0 2rem;
+}
+
+
+.payout-container {
+    background: var(--primary-color-light);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.payout-container h2 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.payout-description {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.payout-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--primary-color-extra-light);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.payout-item:hover {
+    transform: scale(1.03);
+}
+
+.payout-item i {
+    font-size: 24px;
+    color: var(--secondary-color-dark);
+}
+
+.payout-item span {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--white);
+    flex: 1;
+    text-align: left;
+}
+
+.payout-item p {
+    font-size: 12px;
+    color: var(--text-light);
+    flex: 2;
+    text-align: left;
+    font-weight: bold;
+}
+
+
+.flex{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.withdraw-button {
+    background: var(--secondary-color);
+    color: var(--white);
+    font-size: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background 0.3s;
+}
+
+.withdraw-button:hover {
+    background: var(--secondary-color-dark);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive */
+@media (max-width: 800px) {
+    .overlay {
+        padding: 10px 5px;
+    }
+
+
+}

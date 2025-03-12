@@ -134,7 +134,7 @@
     background-color: none;
     margin: 10px 0;
     border: 1px solid var(--secondary-color-dark);
-    border-radius: 3.437rem;
+    border-radius: 15px;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 15% 85%;
@@ -291,7 +291,7 @@
   .panel__title {
     font-weight: 600;
     line-height: 1;
-    font-size: 2.5rem;
+    font-size: 1.50rem;
     color: var(--primary-color-light);
   }
   
@@ -300,6 +300,7 @@
     padding: 0.7rem 0;
     max-width: 560px;
     margin-bottom: 1rem;
+    /* color: var(--primary-color-light); */
   }
   
   .panel__image {
@@ -464,9 +465,10 @@
       font-size: 1.40rem;
     }
     .panel__paragraph {
-      font-size: 14px;
+      font-size: 11px;
       padding: 0.5rem 0;
       margin-bottom: 1rem;
+      font-weight: 600;
     }
   
     .panel__right .panel__content,

@@ -31,20 +31,22 @@ document.addEventListener("DOMContentLoaded", () => {
   
   
   
-  
-  
-  const checkbox = document.getElementById("checkbox");
-  const professional = document.getElementById("professional");
-  const master = document.getElementById("master");
-  const basic = document.getElementById("basic");
-  
-  checkbox.addEventListener("click", () => {
-    basic.textContent = basic.textContent === "$199.99" ? "$19.99" : "$199.99";
-    professional.textContent =
-      professional.textContent === "$249.99" ? "$24.99 " : "$249.99";
-    master.textContent = master.textContent === "$399.99" ? "$39.99" : "$399.99";
+  // MONTHLY AND WEEKLY TOGGLE 
+
+  document.getElementById("checkbox").addEventListener("change", function() {
+    // Monthly to Weekly Price Change for Basic
+    if (this.checked) {
+      document.getElementById("basic").innerText = "$50.99"; // Weekly Price
+      document.getElementById("professional").innerText = "$100.99"; // Weekly Price
+      document.getElementById("master").innerText = "$300.99"; // Weekly Price
+    } else {
+      document.getElementById("basic").innerText = "$100.99"; // Monthly Price
+      document.getElementById("professional").innerText = "$400.99"; // Monthly Price
+      document.getElementById("master").innerText = "$900.99"; // Monthly Price
+    }
   });
   
+
   
   
   
@@ -145,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
         member: {
           name: "Jane Cooper",
           profession: "Stock Trader",
-          image: "images/member.jpg"
+          image: "/images/profile.jpeg"
         },
         rating: 2 // Rating for this review
       },
@@ -154,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
         member: {
           name: "John Doe",
           profession: "Gold Trader",
-          image: "images/member.jpg"
+          image: "/images/profile.jpeg"
         },
         rating: 4.5 // Rating for this review
       },
@@ -163,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
         member: {
           name: "Sarah Lee",
           profession: "Crypto Trader",
-          image: "images/member.jpg"
+          image: "/images/profile.jpeg"
         },
         rating: 2 // Rating for this review
       }

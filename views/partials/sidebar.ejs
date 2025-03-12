@@ -1,10 +1,52 @@
+<!-- NAV FOR SMALL SCREEN  -->
+<div class="small-sreen-nav">
+    <div class="link-container">
+
+        <a href="/competition" class="on">
+            <i class="ri-trophy-line"></i>
+            <p>Competition</p>
+        </a>
+
+        <a href="/dashboard" class="on active">
+            <div class="p">
+                <i class="ri-bar-chart-2-line"></i>
+            </div>
+            <p class="up">Dashboard</p>
+        </a>
+
+        <a href="/deposit" class="on">
+            <i class="ri-bank-card-line"></i>
+            <p>Deposit</p>
+        </a>
+
+
+    </div>
+</div>
+
+
+
+
+
 <!-- SIDE BAR FOR SMALL SCREEN  -->
 <div class="contain-hamburger" id="hamburger-container">
     <div class="me">
-        <img src="/images/member.jpg" alt="Profile" class="profile-pic">
+
+        <div class="profile-summary">
+            <img src="/images/profile.jpeg" alt="Profile" class="profile-pic">
+            <div>
+                <h2>
+                    <%= user.username %>
+                </h2>
+                <p>
+                    <%= user.email %>
+                </p>
+            </div>
+        </div>
+
+
         <div class="hamburger" id="hamburger-menu">
-            <i class="ri-menu-fold-fill" id="open-menu"></i>
-            <i class="ri-menu-unfold-fill" id="close-menu" style="display: none;"></i>
+            <i class="ri-menu-3-line" id="open-menu"></i>
+            <i class="ri-menu-2-line" id="close-menu" style="display: none;"></i>
         </div>
     </div>
 </div>
@@ -14,30 +56,43 @@
     <span class="bg__blur"></span>
     <span class="bg__blur footer__blur"></span>
 
+
+    <div class="logo">
+        <img src="/images/favicon.png" alt="logo" width="40%">
+    </div>
+
     <div class="menu">
         <a href="/dashboard" class="on">
-            <i class="ri-flag-fill"></i>
+            <i class="ri-bar-chart-2-line"></i>
             <span>Dashboard</span>
         </a>
-        <a href="#" class="on">
-            <i class="ri-vip-crown-fill"></i>
-            <span>Payouts</span>
-        </a>
-        <a href="/buy-account" class="on">
-            <i class="ri-shopping-bag-fill"></i>
-            <span>Buy Account</span>
+        <a href="/deposit" class="on active">
+            <i class="ri-bank-card-line"></i>
+            <span>Deposit</span>
         </a>
         <a href="/competition" class="on">
-            <i class="ri-trophy-fill"></i>
+            <i class="ri-trophy-line"></i>
             <span>Competition</span>
         </a>
-        <a href="/tournament" class="on">
-            <i class="ri-bard-fill"></i>
+        <a href="#" class="on buyAccount">
+            <i class="ri-bard-line"></i>
             <span>Tournament</span>
         </a>
-        <a href="/smart-invest" class="on active">
-            <i class="ri-flag-fill"></i>
+        <a href="#" class="on active buyAccount">
+            <i class="ri-coin-line"></i>
             <span>Smart Invest</span>
+        </a>
+        <a href="#" class="on buyAccount">
+            <i class="ri-shopping-basket-line"></i>
+            <span>Buy Account</span>
+        </a>
+        <a href="/payout" class="on">
+            <i class="ri-vip-crown-line"></i>
+            <span>Payouts</span>
+        </a>
+        <a href="#" class="on toast">
+            <i class="ri-team-line"></i>
+            <span>Team Operations</span>
         </a>
         <a href="/" class="on">
             <i class="ri-logout-box-line"></i>
@@ -46,7 +101,7 @@
     </div>
     <data>
         <div class="sars">
-            <a href="/competition"><button>Start Competition</button></a>
+            <a href="/deposit"><button>Trade for Poeple</button></a>
         </div>
     </data>
 </div>
@@ -64,32 +119,40 @@
 
 
     <div class="logo">
-        <img src="/images/logo.png" alt="logo" width="40%">
+        <img src="/images/favicon.png" alt="logo" width="45%">
     </div>
     <div class="menu">
         <a href="/dashboard" class="on active">
-            <i class="ri-flag-fill"></i>
+            <i class="ri-bar-chart-2-line"></i>
             <span>Dashboard</span>
         </a>
-        <a href="#" class="on">
-            <i class="ri-vip-crown-fill"></i>
-            <span>Payouts</span>
-        </a>
-        <a href="/buy-account" class="on">
-            <i class="ri-shopping-bag-fill"></i>
-            <span>Buy Account</span>
+        <a href="/deposit" class="on active">
+            <i class="ri-bank-card-line"></i>
+            <span>Deposit</span>
         </a>
         <a href="/competition" class="on">
-            <i class="ri-trophy-fill"></i>
+            <i class="ri-trophy-line"></i>
             <span>Competition</span>
         </a>
-        <a href="/tournament" class="on">
-            <i class="ri-bard-fill"></i>
+        <a href="#" class="on buyAccount">
+            <i class="ri-shopping-basket-line"></i>
+            <span>Buy Account</span>
+        </a>
+        <a href="#" class="on buyAccount">
+            <i class="ri-bard-line"></i>
             <span>Tournament</span>
         </a>
-        <a href="/smart-invest" class="on">
-            <i class="ri-coin-fill"></i>
+        <a href="#" class="on buyAccount">
+            <i class="ri-coin-line"></i>
             <span>Smart Invest</span>
+        </a>        
+        <a href="/payout" class="on">
+            <i class="ri-vip-crown-line"></i>
+            <span>Payouts</span>
+        </a>
+        <a href="#" class="on toasts">
+            <i class="ri-team-line"></i>
+            <span>Team Operations</span>
         </a>
         <a href="/" class="on">
             <i class="ri-logout-box-line"></i>
@@ -98,7 +161,7 @@
     </div>
     <data>
         <div class="sars">
-           <a href="/competition"><button>Start Competition</button></a>
+           <a href="/deposit"><button>Trade for Poeple</button></a>
         </div>
     </data>
 
@@ -111,3 +174,72 @@
 </div>
 
 
+
+
+
+<!-- SHOW SWEET ALART 2 FOR SMALL SCREEN-->
+<script>
+    document.querySelector(".toast").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default link behavior
+    
+        Swal.fire({
+            title: "Join Team Operations!",
+            text: "Become an admin and get added to our private social media platforms. Connect with other workers, share challenges, and collaborate on improving our system.",
+            icon: "info",
+            confirmButtonText: "Become an Admin",
+            showCancelButton: true,
+            cancelButtonText: "Cancel",
+            confirmButtonColor: "#696fdd",
+            cancelButtonColor: "#d33",
+            width: "400px",
+            didOpen: () => {
+                document.querySelector(".swal2-title").style.fontSize = "16px";
+                document.querySelector(".swal2-title").style.lineHeight = "1.4";
+                document.querySelector(".swal2-html-container").style.fontSize = "14px";
+                document.querySelector(".swal2-html-container").style.lineHeight = "1.5";
+                document.querySelector(".swal2-confirm").style.fontSize = "13px";
+                document.querySelector(".swal2-confirm").style.padding = "8px 16px";
+                document.querySelector(".swal2-cancel").style.fontSize = "13px";
+                document.querySelector(".swal2-cancel").style.padding = "8px 16px";
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/deposit";  
+            }
+        });
+    });
+    </script>
+    
+
+<!-- SHOW SWEET ALART 2 FOR SMALL SCREEN-->
+    <script>
+        document.querySelector(".toasts").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+        
+            Swal.fire({
+                title: "Join Team Operations!",
+                text: "Become an admin and get added to our private social media platforms. Connect with other workers, share challenges, and collaborate on improving our system.",
+                icon: "info",
+                confirmButtonText: "Become an Admin",
+                showCancelButton: true,
+                cancelButtonText: "Cancel",
+                confirmButtonColor: "#696fdd",
+                cancelButtonColor: "#d33",
+                width: "400px",
+                didOpen: () => {
+                    document.querySelector(".swal2-title").style.fontSize = "16px";
+                    document.querySelector(".swal2-title").style.lineHeight = "1.4";
+                    document.querySelector(".swal2-html-container").style.fontSize = "14px";
+                    document.querySelector(".swal2-html-container").style.lineHeight = "1.5";
+                    document.querySelector(".swal2-confirm").style.fontSize = "13px";
+                    document.querySelector(".swal2-confirm").style.padding = "8px 16px";
+                    document.querySelector(".swal2-cancel").style.fontSize = "13px";
+                    document.querySelector(".swal2-cancel").style.padding = "8px 16px";
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "/deposit";  
+                }
+            });
+        });
+        </script>

