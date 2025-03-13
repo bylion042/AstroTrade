@@ -91,7 +91,7 @@ nav {
 .nav__links {
   list-style: none;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 3rem;
 }
 

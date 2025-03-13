@@ -55,7 +55,7 @@ document.querySelectorAll(".buyAccount").forEach((element) => {
 
         Swal.fire({
             title: "Access Denied!",
-            text: "You are not yet an admin. Deposit $0.5 to have full access.",
+            text: "You are not yet an admin. Deposit $0.50 to have full access.",
             icon: "warning",
             confirmButtonText: "Okay",
             confirmButtonColor: "#696fdd",
@@ -71,7 +71,7 @@ document.querySelectorAll(".buyAccount").forEach((element) => {
         }).then(() => {
             Swal.fire({
                 title: "Start Trading for People!",
-                text: "Pay only $0.5 as an access fee (no hidden fees, prove you're not a bot). Complete your deposit to gain full access.",
+                text: "Pay only $0.50 as an access fee (no hidden fees, prove you're not a bot). Complete your deposit to gain full access.",
                 icon: "success",
                 confirmButtonText: "Deposit Now",
                 showCancelButton: true,
