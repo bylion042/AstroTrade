@@ -440,6 +440,7 @@ data {
     border-top-right-radius: 30px;
     z-index: 1000;
     box-shadow: 0 0 10px rgba(107, 117, 249, 0.5);
+    display: none;
 }
 
 .link-container {
