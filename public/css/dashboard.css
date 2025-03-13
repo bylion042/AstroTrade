@@ -386,7 +386,7 @@ data {
 
 
 /* FIXED CHART ICON  */
-.fixed-icon {
+/* .fixed-icon {
     position: fixed;
     bottom: 70px;
     right: 10px;
@@ -411,7 +411,7 @@ data {
 .fixed-icon:hover {
     background: var(--background-gradient);
     transform: scale(1.1);
-}
+} */
 
 
 
